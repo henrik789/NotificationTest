@@ -8,6 +8,9 @@ class OnBoardingViewController: UIViewController, PaperOnboardingDataSource, Pap
     
     @IBOutlet weak var getstartedButton: UIButton!
     @IBAction func getstartedButton(_ sender: Any) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: "onboarding complete")
+        userDefaults.synchronize()
     }
     @IBOutlet weak var onboardingView: OnBoradingview!
     
