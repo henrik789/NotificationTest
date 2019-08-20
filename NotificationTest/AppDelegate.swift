@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  NotificationTest
-//
-//  Created by Henrik on 2019-06-25.
-//  Copyright © 2019 Henrik. All rights reserved.
-//
 
 import UIKit
 
@@ -15,20 +8,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        window = UIWindow()
-//        window?.makeKeyAndVisible()
-//        let layout = UICollectionViewFlowLayout()
-//        let swipingController = SwipingViewController(collectionViewLayout: layout)
-//        window?.rootViewController = swipingController
 
         window = UIWindow(frame: UIScreen.main.bounds)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         var initVC = sb.instantiateViewController(withIdentifier: "onboarding")
-        let userDefaults = UserDefaults.standard
-        if userDefaults.bool(forKey: "onboarding complete") {
-            initVC = sb.instantiateViewController(withIdentifier: "mainapp")
-        }
+//        let userDefaults = UserDefaults.standard
+//        if userDefaults.bool(forKey: "onboarding complete") {
+//            initVC = sb.instantiateViewController(withIdentifier: "mainapp")
+//        }
         window?.rootViewController = initVC
         window?.makeKeyAndVisible()
         

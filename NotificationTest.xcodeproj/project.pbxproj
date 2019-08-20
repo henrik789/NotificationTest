@@ -8,30 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		38520BD3B6CB23F83BBF2760 /* Pods_NotificationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F575ABB3DB17B893FF6B90 /* Pods_NotificationTest.framework */; };
+		AF2363F0230A794A002A4650 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363EF230A794A002A4650 /* UIView.swift */; };
+		AF2363F2230A7B40002A4650 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F1230A7B40002A4650 /* UIButton.swift */; };
+		AF2363F5230BCB1F002A4650 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */; };
+		AF2363F7230BCC03002A4650 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F6230BCC03002A4650 /* TextViewController.swift */; };
+		AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */; };
+		AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */; };
+		AF2363FE230C807E002A4650 /* DiaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */; };
 		AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */; };
-		AF7E0F4322C5FF620019EBAE /* OnBoradingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4222C5FF620019EBAE /* OnBoradingview.swift */; };
+		AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */; };
 		AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */; };
-		AFDECAE822C23CA6007B4F5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE722C23CA6007B4F5C /* ViewController.swift */; };
+		AFDECAE822C23CA6007B4F5C /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE722C23CA6007B4F5C /* NotesViewController.swift */; };
 		AFDECAEB22C23CA6007B4F5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAE922C23CA6007B4F5C /* Main.storyboard */; };
 		AFDECAED22C23CA7007B4F5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAEC22C23CA7007B4F5C /* Assets.xcassets */; };
 		AFDECAF022C23CA7007B4F5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAEE22C23CA7007B4F5C /* LaunchScreen.storyboard */; };
 		AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAF722C23CD6007B4F5C /* Notification.swift */; };
+		AFDFEE7C2309F05400C98560 /* SaveToCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */; };
+		AFDFEE7F2309F06900C98560 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDFEE7E2309F06900C98560 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18770412D78F5B4A6C74B409 /* Pods-NotificationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationTest/Pods-NotificationTest.debug.xcconfig"; sourceTree = "<group>"; };
 		22F575ABB3DB17B893FF6B90 /* Pods_NotificationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CBFE78A8A7069B5C6DB6C2 /* Pods-NotificationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationTest/Pods-NotificationTest.release.xcconfig"; sourceTree = "<group>"; };
+		AF2363EF230A794A002A4650 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		AF2363F1230A7B40002A4650 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		AF2363F6230BCC03002A4650 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
-		AF7E0F4222C5FF620019EBAE /* OnBoradingview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoradingview.swift; sourceTree = "<group>"; };
+		AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingview.swift; sourceTree = "<group>"; };
 		AFDECAE222C23CA6007B4F5C /* NotificationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFDECAE722C23CA6007B4F5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFDECAE722C23CA6007B4F5C /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		AFDECAEA22C23CA6007B4F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFDECAEC22C23CA7007B4F5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFDECAEF22C23CA7007B4F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFDECAF122C23CA7007B4F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFDECAF722C23CD6007B4F5C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToCloud.swift; sourceTree = "<group>"; };
+		AFDFEE7D2309F06600C98560 /* NotificationTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationTest.entitlements; sourceTree = "<group>"; };
+		AFDFEE7E2309F06900C98560 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38520BD3B6CB23F83BBF2760 /* Pods_NotificationTest.framework in Frameworks */,
+				AFDFEE7F2309F06900C98560 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +78,33 @@
 		97151043E3B8A8F309BF3CF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFDFEE7E2309F06900C98560 /* CloudKit.framework */,
 				22F575ABB3DB17B893FF6B90 /* Pods_NotificationTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF2363F3230BCAB9002A4650 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AF2363EF230A794A002A4650 /* UIView.swift */,
+				AF2363F1230A7B40002A4650 /* UIButton.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AF2363FA230BCCD8002A4650 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFDECAE722C23CA6007B4F5C /* NotesViewController.swift */,
+				AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */,
+				AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */,
+				AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */,
+				AF2363F6230BCC03002A4650 /* TextViewController.swift */,
+				AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */,
+				AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		AFDECAD922C23CA6007B4F5C = {
@@ -84,11 +128,13 @@
 		AFDECAE422C23CA6007B4F5C /* NotificationTest */ = {
 			isa = PBXGroup;
 			children = (
+				AFDFEE7D2309F06600C98560 /* NotificationTest.entitlements */,
 				AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */,
-				AFDECAE722C23CA6007B4F5C /* ViewController.swift */,
+				AF2363F3230BCAB9002A4650 /* Helpers */,
 				AFDECAF722C23CD6007B4F5C /* Notification.swift */,
-				AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */,
-				AF7E0F4222C5FF620019EBAE /* OnBoradingview.swift */,
+				AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */,
+				AF2363FA230BCCD8002A4650 /* ViewControllers */,
+				AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */,
 				AFDECAE922C23CA6007B4F5C /* Main.storyboard */,
 				AFDECAEC22C23CA7007B4F5C /* Assets.xcassets */,
 				AFDECAEE22C23CA7007B4F5C /* LaunchScreen.storyboard */,
@@ -131,6 +177,14 @@
 				TargetAttributes = {
 					AFDECAE122C23CA6007B4F5C = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -157,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2363FE230C807E002A4650 /* DiaryCollectionViewCell.xib in Resources */,
 				AFDECAF022C23CA7007B4F5C /* LaunchScreen.storyboard in Resources */,
 				AFDECAED22C23CA7007B4F5C /* Assets.xcassets in Resources */,
 				AFDECAEB22C23CA6007B4F5C /* Main.storyboard in Resources */,
@@ -209,11 +264,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFDECAE822C23CA6007B4F5C /* ViewController.swift in Sources */,
+				AFDECAE822C23CA6007B4F5C /* NotesViewController.swift in Sources */,
 				AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */,
-				AF7E0F4322C5FF620019EBAE /* OnBoradingview.swift in Sources */,
+				AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */,
+				AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */,
+				AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */,
+				AF2363F5230BCB1F002A4650 /* NavigationViewController.swift in Sources */,
+				AF2363F2230A7B40002A4650 /* UIButton.swift in Sources */,
+				AF2363F7230BCC03002A4650 /* TextViewController.swift in Sources */,
+				AF2363F0230A794A002A4650 /* UIView.swift in Sources */,
 				AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */,
 				AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */,
+				AFDFEE7C2309F05400C98560 /* SaveToCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +422,7 @@
 			baseConfigurationReference = 18770412D78F5B4A6C74B409 /* Pods-NotificationTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotificationTest/NotificationTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT2ZWB24ZA;
 				INFOPLIST_FILE = NotificationTest/Info.plist;
@@ -379,6 +442,7 @@
 			baseConfigurationReference = A9CBFE78A8A7069B5C6DB6C2 /* Pods-NotificationTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotificationTest/NotificationTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT2ZWB24ZA;
 				INFOPLIST_FILE = NotificationTest/Info.plist;
