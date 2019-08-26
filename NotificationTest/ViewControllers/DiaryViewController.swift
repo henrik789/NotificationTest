@@ -74,17 +74,29 @@ class DiaryViewController: UIViewController {
 
 extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return notes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiaryCollectionViewCell.identifier, for: indexPath) as! DiaryCollectionViewCell
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
         
+        let noteDate = notes[indexPath.row].creationDate
+        
+        dateFormatter.locale = Locale(identifier: "en_US")
+        print(dateFormatter.string(from: noteDate!)) // Jan 2, 2001
+        cell.dateLabel.text = dateFormatter.string(from: noteDate!)
+        cell.emojiLabel.text = "👍"
+        
+//        cell.dateLabel.text = formatter.string(from: notedate!)
+        cell.headlineLabel.text = notes[indexPath.row].value(forKey: "content") as! String
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screenWidth * 0.94 , height: screenHeight / 5)
+        return CGSize(width: screenWidth * 0.94 , height: screenHeight / 8)
     }
     
     

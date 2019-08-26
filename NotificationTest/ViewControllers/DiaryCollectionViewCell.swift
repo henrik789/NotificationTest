@@ -10,12 +10,19 @@ import UIKit
 
 class DiaryCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var emojiLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var headlineLabel: UILabel!
+    
     static var identifier: String {
         return "DiaryCollectionViewCell"
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = layer.bounds.height / 6
     }
     
 
