@@ -15,6 +15,8 @@
 		AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */; };
 		AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */; };
 		AF2363FE230C807E002A4650 /* DiaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */; };
+		AF2E10232316B71B008DA6E7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2E10222316B71B008DA6E7 /* CloudKit.framework */; };
+		AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */; };
 		AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */; };
 		AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */; };
 		AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */; };
@@ -24,7 +26,6 @@
 		AFDECAF022C23CA7007B4F5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAEE22C23CA7007B4F5C /* LaunchScreen.storyboard */; };
 		AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAF722C23CD6007B4F5C /* Notification.swift */; };
 		AFDFEE7C2309F05400C98560 /* SaveToCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */; };
-		AFDFEE7F2309F06900C98560 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDFEE7E2309F06900C98560 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF2E10222316B71B008DA6E7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingview.swift; sourceTree = "<group>"; };
 		AFDECAE222C23CA6007B4F5C /* NotificationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +53,6 @@
 		AFDECAF722C23CD6007B4F5C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToCloud.swift; sourceTree = "<group>"; };
 		AFDFEE7D2309F06600C98560 /* NotificationTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationTest.entitlements; sourceTree = "<group>"; };
-		AFDFEE7E2309F06900C98560 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38520BD3B6CB23F83BBF2760 /* Pods_NotificationTest.framework in Frameworks */,
-				AFDFEE7F2309F06900C98560 /* CloudKit.framework in Frameworks */,
+				AF2E10232316B71B008DA6E7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +80,7 @@
 		97151043E3B8A8F309BF3CF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFDFEE7E2309F06900C98560 /* CloudKit.framework */,
+				AF2E10222316B71B008DA6E7 /* CloudKit.framework */,
 				22F575ABB3DB17B893FF6B90 /* Pods_NotificationTest.framework */,
 			);
 			name = Frameworks;
@@ -100,6 +102,7 @@
 				AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */,
 				AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */,
 				AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */,
+				AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */,
 				AF2363F6230BCC03002A4650 /* TextViewController.swift */,
 				AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */,
 				AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */,
@@ -267,6 +270,7 @@
 				AFDECAE822C23CA6007B4F5C /* NotesViewController.swift in Sources */,
 				AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */,
 				AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */,
+				AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */,
 				AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */,
 				AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */,
 				AF2363F5230BCB1F002A4650 /* NavigationViewController.swift in Sources */,

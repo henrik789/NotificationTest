@@ -7,7 +7,7 @@ import UserNotifications
 
 class NotesViewController: UIViewController {
     
-    var cloudSave = SaveToCloud()
+//    var cloudSave = SaveToCloud()
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBAction func refreshButton(_ sender: Any) {
     }
@@ -15,11 +15,11 @@ class NotesViewController: UIViewController {
         
     }
     
-    @IBOutlet weak var headlineView: UIView!
-    @IBOutlet weak var trainingView: UIView!
-    @IBOutlet weak var alcoholView: UIView!
-    @IBOutlet weak var foodView: UIView!
-    @IBOutlet weak var tobaccoView: UIView!
+//    @IBOutlet weak var headlineView: UIView!
+//    @IBOutlet weak var trainingView: UIView!
+//    @IBOutlet weak var alcoholView: UIView!
+//    @IBOutlet weak var foodView: UIView!
+//    @IBOutlet weak var tobaccoView: UIView!
     @IBAction func saveButton(_ sender: Any) {
     }
     @IBOutlet weak var saveButton: UIButton!
@@ -29,18 +29,10 @@ class NotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        config()
+//        config()
         
     }
     
-    
-    func config() {
-        tobaccoView.commonStyle()
-        foodView.commonStyle()
-        headlineView.commonStyle()
-        trainingView.commonStyle()
-        alcoholView.commonStyle()
-        saveButton.commonButtonStyle()
-    }
+
 }
 
