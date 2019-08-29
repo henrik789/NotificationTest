@@ -20,9 +20,9 @@ class DiaryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 1
-        self.layer.cornerRadius = layer.bounds.height / 6
+//        self.layer.borderColor = UIColor.lightGray.cgColor
+//        self.layer.borderWidth = 1
+//        self.layer.cornerRadius = layer.bounds.height / 6
     }
     
 
