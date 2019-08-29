@@ -21,8 +21,8 @@ class NavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goToNote.commonButtonStyle()
-        goToDiary.commonButtonStyle()
+//        goToNote.commonButtonStyle()
+//        goToDiary.commonButtonStyle()
 
     }
     
