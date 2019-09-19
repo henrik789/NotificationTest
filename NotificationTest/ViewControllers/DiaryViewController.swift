@@ -57,15 +57,11 @@ class DiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.collectionView.dataSource = self
-//        self.collectionView.delegate = self
+
         self.collectionView.register(UINib.init(nibName: DiaryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DiaryCollectionViewCell.identifier)
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(queryCloud), for: .valueChanged)
-        //        self.tableView.refreshControl = refreshControl
-        
+        refreshControl.addTarget(self, action: #selector(queryCloud), for: .valueChanged)        
         queryCloud()
         
     }
@@ -96,8 +92,15 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screenWidth * 0.94 , height: screenHeight / 8)
+        return CGSize(width: screenWidth , height: screenHeight / 8)
     }
     
+    // Do any additional setup after loading the view, typically from a nib.
+//    let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//    layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+//    layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+//    layout.minimumInteritemSpacing = 0
+//    layout.minimumLineSpacing = 0
+//    collectionView!.collectionViewLayout = layout
     
 }

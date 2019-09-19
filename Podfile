@@ -6,5 +6,6 @@ target 'NotificationTest' do
   use_frameworks!
 
   pod 'paper-onboarding'
+  pod 'Macaw'
 
 end
