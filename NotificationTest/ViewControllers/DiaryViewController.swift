@@ -87,7 +87,8 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         cell.emojiLabel.text = "👍"
         
 //        cell.dateLabel.text = formatter.string(from: notedate!)
-        cell.headlineLabel.text = notes[indexPath.row].value(forKey: "content") as? String
+        cell.headlineLabel.text = notes[indexPath.row].value(forKey: "journalEntry") as? String
+        cell.dateLabel.text = notes[indexPath.row].value(forKey: "alcoEntry") as? String
         return cell
     }
     
