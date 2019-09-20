@@ -9,14 +9,18 @@
 import UIKit
 import CloudKit
 
-class CloudModel {
+enum JournalKeys: String {
+    case journalEntry = "journalEntry"
+}
+
+class CloudManager {
     
     var notes = [CKRecord]()
     let database = CKContainer.default().privateCloudDatabase
     
     func saveToCloud(note: String) {
         let newNote = CKRecord(recordType: "Note")
-        newNote.setValue(note, forKey: "content")
+        newNote.setValue(note, forKey: JournalKeys.journalEntry.rawValue)
         database.save(newNote) { (record, error) in
             print(error as Any)
             guard record != nil else {return}

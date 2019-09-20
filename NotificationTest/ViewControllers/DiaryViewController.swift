@@ -33,7 +33,7 @@ class DiaryViewController: UIViewController {
     
     func saveToCloud(note: String) {
         let newNote = CKRecord(recordType: "Note")
-        newNote.setValue(note, forKey: "content")
+        newNote.setValue(note, forKey: "journalToday")
         database.save(newNote) { (record, error) in
             print(error as Any)
             guard record != nil else {return}

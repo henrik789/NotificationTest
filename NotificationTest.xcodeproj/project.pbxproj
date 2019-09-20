@@ -15,12 +15,10 @@
 		AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */; };
 		AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */; };
 		AF2363FE230C807E002A4650 /* DiaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */; };
-		AF243670231FE9BE0048E36D /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24366F231FE9BE0048E36D /* CloudModel.swift */; };
+		AF243670231FE9BE0048E36D /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24366F231FE9BE0048E36D /* CloudManager.swift */; };
 		AF2E10232316B71B008DA6E7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2E10222316B71B008DA6E7 /* CloudKit.framework */; };
 		AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */; };
 		AF4B827A2333665E008BC37F /* JournalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF4B82782333665E008BC37F /* JournalModel.xcdatamodeld */; };
-		AF4B82B1233387EB008BC37F /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B82AF233387EB008BC37F /* Journal+CoreDataClass.swift */; };
-		AF4B82B2233387EB008BC37F /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B82B0233387EB008BC37F /* Journal+CoreDataProperties.swift */; };
 		AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */; };
 		AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */; };
 		AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */; };
@@ -42,15 +40,13 @@
 		AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCollectionViewCell.xib; sourceTree = "<group>"; };
-		AF24366F231FE9BE0048E36D /* CloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
+		AF24366F231FE9BE0048E36D /* CloudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
 		AF2E10222316B71B008DA6E7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		AF4B82792333665E008BC37F /* JournalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JournalModel.xcdatamodel; sourceTree = "<group>"; };
-		AF4B82AF233387EB008BC37F /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AF4B82B0233387EB008BC37F /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingview.swift; sourceTree = "<group>"; };
-		AFDECAE222C23CA6007B4F5C /* NotificationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFDECAE222C23CA6007B4F5C /* DailyJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDECAEA22C23CA6007B4F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFDECAEC22C23CA7007B4F5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,9 +115,7 @@
 		AF24366E231FE9A90048E36D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AF4B82AF233387EB008BC37F /* Journal+CoreDataClass.swift */,
-				AF4B82B0233387EB008BC37F /* Journal+CoreDataProperties.swift */,
-				AF24366F231FE9BE0048E36D /* CloudModel.swift */,
+				AF24366F231FE9BE0048E36D /* CloudManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,7 +133,7 @@
 		AFDECAE322C23CA6007B4F5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFDECAE222C23CA6007B4F5C /* NotificationTest.app */,
+				AFDECAE222C23CA6007B4F5C /* DailyJournal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,7 +176,7 @@
 			);
 			name = NotificationTest;
 			productName = NotificationTest;
-			productReference = AFDECAE222C23CA6007B4F5C /* NotificationTest.app */;
+			productReference = AFDECAE222C23CA6007B4F5C /* DailyJournal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -284,8 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */,
-				AF243670231FE9BE0048E36D /* CloudModel.swift in Sources */,
-				AF4B82B2233387EB008BC37F /* Journal+CoreDataProperties.swift in Sources */,
+				AF243670231FE9BE0048E36D /* CloudManager.swift in Sources */,
 				AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */,
 				AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */,
 				AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */,
@@ -293,7 +286,6 @@
 				AF2363F5230BCB1F002A4650 /* NavigationViewController.swift in Sources */,
 				AF4B827A2333665E008BC37F /* JournalModel.xcdatamodeld in Sources */,
 				AF2363F2230A7B40002A4650 /* UIButton.swift in Sources */,
-				AF4B82B1233387EB008BC37F /* Journal+CoreDataClass.swift in Sources */,
 				AF2363F7230BCC03002A4650 /* TextViewController.swift in Sources */,
 				AF2363F0230A794A002A4650 /* UIView.swift in Sources */,
 				AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */,
@@ -455,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = se.nackademin.ma.henriklarsson.NotificationTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DailyJournal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -476,7 +468,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = se.nackademin.ma.henriklarsson.NotificationTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DailyJournal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -5,6 +5,7 @@ import paper_onboarding
 
 
 class OnBoardingViewController: UIViewController, PaperOnboardingDataSource, PaperOnboardingDelegate {
+
     
     @IBOutlet weak var getstartedButton: UIButton!
     @IBAction func getstartedButton(_ sender: Any) {
@@ -18,6 +19,7 @@ class OnBoardingViewController: UIViewController, PaperOnboardingDataSource, Pap
         super.viewDidLoad()
         onboardingView.dataSource = self
         onboardingView.delegate = self
+
     }
 
     func onboardingItemsCount() -> Int {
