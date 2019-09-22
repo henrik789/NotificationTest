@@ -42,7 +42,7 @@ class CloudManager {
     }
     
     
-//    @objc func queryCloud() {
+//    func queryCloud() {
 //        let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
 //        database.perform(query, inZoneWith: nil) { (records, _) in
 //            guard let records = records else {return}
@@ -50,7 +50,7 @@ class CloudManager {
 //            self.notes = sortedRecords
 //            DispatchQueue.main.async {
 //                //                self.tableView.refreshControl?.endRefreshing()
-//                self.collectionView.reloadData()
+//                self.tableView.reloadData()
 //            }
 //        }
 //    }

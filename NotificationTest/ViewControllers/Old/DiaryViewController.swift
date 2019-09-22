@@ -31,15 +31,15 @@ class DiaryViewController: UIViewController {
     var notes = [CKRecord]()
     let database = CKContainer.default().privateCloudDatabase
     
-    func saveToCloud(note: String) {
-        let newNote = CKRecord(recordType: "Note")
-        newNote.setValue(note, forKey: "journalToday")
-        database.save(newNote) { (record, error) in
-            print(error as Any)
-            guard record != nil else {return}
-            print("saved")
-        }
-    }
+//    func saveToCloud(note: String) {
+//        let newNote = CKRecord(recordType: "Note")
+//        newNote.setValue(note, forKey: "journalToday")
+//        database.save(newNote) { (record, error) in
+//            print(error as Any)
+//            guard record != nil else {return}
+//            print("saved")
+//        }
+//    }
     
     @objc func queryCloud() {
         let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
@@ -89,6 +89,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
 //        cell.dateLabel.text = formatter.string(from: notedate!)
         cell.headlineLabel.text = notes[indexPath.row].value(forKey: "journalEntry") as? String
         cell.dateLabel.text = notes[indexPath.row].value(forKey: "alcoEntry") as? String
+        print(notes[indexPath.row].value(forKey: "alcoEntry") as? String ?? 1)
         return cell
     }
     

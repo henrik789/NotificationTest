@@ -19,6 +19,8 @@
 		AF2E10232316B71B008DA6E7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2E10222316B71B008DA6E7 /* CloudKit.framework */; };
 		AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */; };
 		AF4B827A2333665E008BC37F /* JournalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF4B82782333665E008BC37F /* JournalModel.xcdatamodeld */; };
+		AF6E92E5233528B60050F643 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6E92E3233528B60050F643 /* JournalTableViewCell.swift */; };
+		AF6E92F0233616120050F643 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6E92EF233616120050F643 /* JournalTableViewController.swift */; };
 		AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */; };
 		AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */; };
 		AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */; };
@@ -44,6 +46,8 @@
 		AF2E10222316B71B008DA6E7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		AF4B82792333665E008BC37F /* JournalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JournalModel.xcdatamodel; sourceTree = "<group>"; };
+		AF6E92E3233528B60050F643 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
+		AF6E92EF233616120050F643 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingview.swift; sourceTree = "<group>"; };
 		AFDECAE222C23CA6007B4F5C /* DailyJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +97,8 @@
 			children = (
 				AF2363EF230A794A002A4650 /* UIView.swift */,
 				AF2363F1230A7B40002A4650 /* UIButton.swift */,
+				AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */,
+				AFDECAF722C23CD6007B4F5C /* Notification.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -100,14 +106,10 @@
 		AF2363FA230BCCD8002A4650 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */,
-				AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */,
-				AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */,
-				AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */,
-				AF2363F6230BCC03002A4650 /* TextViewController.swift */,
-				AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */,
-				AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */,
-				AF4B82782333665E008BC37F /* JournalModel.xcdatamodeld */,
+				AF6E92ED23360E2B0050F643 /* Old */,
+				AF6E92EC23360E0D0050F643 /* NewNoteVC */,
+				AF6E92EB23360DF60050F643 /* JournalTableVC */,
+				AF6E92EE23360E520050F643 /* OnboardingVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -116,8 +118,47 @@
 			isa = PBXGroup;
 			children = (
 				AF24366F231FE9BE0048E36D /* CloudManager.swift */,
+				AF4B82782333665E008BC37F /* JournalModel.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AF6E92EB23360DF60050F643 /* JournalTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				AF6E92E3233528B60050F643 /* JournalTableViewCell.swift */,
+				AF6E92EF233616120050F643 /* JournalTableViewController.swift */,
+			);
+			path = JournalTableVC;
+			sourceTree = "<group>";
+		};
+		AF6E92EC23360E0D0050F643 /* NewNoteVC */ = {
+			isa = PBXGroup;
+			children = (
+				AF2E10242316C22F008DA6E7 /* NewNoteViewController.swift */,
+				AF2363F6230BCC03002A4650 /* TextViewController.swift */,
+			);
+			path = NewNoteVC;
+			sourceTree = "<group>";
+		};
+		AF6E92ED23360E2B0050F643 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				AF2363FB230C807E002A4650 /* DiaryCollectionViewCell.swift */,
+				AF2363FC230C807E002A4650 /* DiaryCollectionViewCell.xib */,
+				AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */,
+				AF2363F8230BCC7E002A4650 /* DiaryViewController.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		AF6E92EE23360E520050F643 /* OnboardingVC */ = {
+			isa = PBXGroup;
+			children = (
+				AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */,
+				AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */,
+			);
+			path = OnboardingVC;
 			sourceTree = "<group>";
 		};
 		AFDECAD922C23CA6007B4F5C = {
@@ -144,11 +185,8 @@
 				AFDFEE7D2309F06600C98560 /* NotificationTest.entitlements */,
 				AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */,
 				AF2363F3230BCAB9002A4650 /* Helpers */,
-				AFDECAF722C23CD6007B4F5C /* Notification.swift */,
-				AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */,
 				AF24366E231FE9A90048E36D /* Models */,
 				AF2363FA230BCCD8002A4650 /* ViewControllers */,
-				AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */,
 				AFDECAE922C23CA6007B4F5C /* Main.storyboard */,
 				AFDECAEC22C23CA7007B4F5C /* Assets.xcassets */,
 				AFDECAEE22C23CA7007B4F5C /* LaunchScreen.storyboard */,
@@ -284,8 +322,10 @@
 				AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */,
 				AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */,
 				AF2363F5230BCB1F002A4650 /* NavigationViewController.swift in Sources */,
+				AF6E92E5233528B60050F643 /* JournalTableViewCell.swift in Sources */,
 				AF4B827A2333665E008BC37F /* JournalModel.xcdatamodeld in Sources */,
 				AF2363F2230A7B40002A4650 /* UIButton.swift in Sources */,
+				AF6E92F0233616120050F643 /* JournalTableViewController.swift in Sources */,
 				AF2363F7230BCC03002A4650 /* TextViewController.swift in Sources */,
 				AF2363F0230A794A002A4650 /* UIView.swift in Sources */,
 				AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */,
@@ -441,7 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT2ZWB24ZA;
 				INFOPLIST_FILE = NotificationTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT2ZWB24ZA;
 				INFOPLIST_FILE = NotificationTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
