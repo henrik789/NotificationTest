@@ -295,7 +295,7 @@
                                                             </state>
                                                             <connections>
                                                                 <action selector="saveToCloud:" destination="XHI-9d-K1z" eventType="touchUpInside" id="jwh-Wg-hZ1"/>
-                                                                <segue destination="v4v-Pn-t8m" kind="show" id="rxs-YS-5Gd"/>
+                                                                <segue destination="lfs-nM-4L3" kind="show" id="UXj-ry-xSQ"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -343,8 +343,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Lorem " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-sK-RR8">
-                            <rect key="frame" x="0.0" y="40" width="300" height="120"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-sK-RR8">
+                            <rect key="frame" x="0.0" y="40" width="300" height="160"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" priority="501" constant="160" id="s5w-tB-JcY"/>
@@ -373,13 +373,66 @@
             <point key="canvasLocation" x="176.80000000000001" y="169.56521739130437"/>
         </scene>
         <!--Journal-->
+        <scene sceneID="abq-q0-MPQ">
+            <objects>
+                <viewController id="lfs-nM-4L3" customClass="JournalTableViewController" customModule="DailyJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j4v-09-BYV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bI0-zC-dcg">
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YFZ-2t-8Mv" firstAttribute="bottom" secondItem="bI0-zC-dcg" secondAttribute="bottom" id="Xza-Qb-3fs"/>
+                            <constraint firstItem="bI0-zC-dcg" firstAttribute="top" secondItem="YFZ-2t-8Mv" secondAttribute="top" id="Ygt-gy-MAe"/>
+                            <constraint firstItem="bI0-zC-dcg" firstAttribute="leading" secondItem="YFZ-2t-8Mv" secondAttribute="leading" id="meJ-1G-G6A"/>
+                            <constraint firstItem="YFZ-2t-8Mv" firstAttribute="trailing" secondItem="bI0-zC-dcg" secondAttribute="trailing" id="sUn-Cc-IqJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YFZ-2t-8Mv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Journal" id="6eK-h7-gOy"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="zwk-OR-JgI" id="L1N-Gz-0WD"/>
+                        <outlet property="detailView" destination="oOt-99-0vG" id="cwP-Xt-mgm"/>
+                        <outlet property="tableView" destination="bI0-zC-dcg" id="GoK-yZ-5pC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUB-Nc-GEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="oOt-99-0vG">
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="600"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-OR-JgI">
+                            <rect key="frame" x="120" y="35" width="130" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="WM7-Hx-irr"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="972" y="169.56521739130437"/>
+        </scene>
+        <!--Journal-->
         <scene sceneID="CAA-sO-QIc">
             <objects>
                 <tableViewController id="v4v-Pn-t8m" customClass="JournalTableViewController" customModule="DailyJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SEJ-zg-uM3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="5iS-Fg-L9d">
+                            <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalTableViewCell" rowHeight="80" id="NXq-jT-Pix" customClass="JournalTableViewCell" customModule="DailyJournal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
@@ -433,12 +486,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Journal" id="a7r-Y9-Yu1"/>
                     <connections>
+                        <outlet property="dateLabel" destination="zwk-OR-JgI" id="5OV-8v-1l5"/>
+                        <outlet property="detailView" destination="oOt-99-0vG" id="VmI-l1-2v2"/>
                         <outlet property="tableView" destination="SEJ-zg-uM3" id="trf-tc-Olv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJU-GE-3wy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.79999999999995" y="169.56521739130437"/>
+            <point key="canvasLocation" x="1913" y="211"/>
         </scene>
         <!--Diary View Controller-->
         <scene sceneID="xBu-pf-R6Z">

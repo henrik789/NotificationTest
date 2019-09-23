@@ -11,7 +11,7 @@ import CloudKit
 
 enum JournalKeys: String {
     case journalEntry = "journalEntry", alcoEntry = "alcoEntry", foodEntry = "foodEntry",
-    trainingEntry = "trainingEntry" , dailyEntry = "dailyEntry"
+    trainingEntry = "trainingEntry" , dailyEntry = "dailyEntry", journalRecordId = "journalRecordId"
     
 }
 
@@ -19,7 +19,6 @@ class CloudManager {
     
     var notes = [CKRecord]()
     let database = CKContainer.default().privateCloudDatabase
-    
     var alcoholValue: Int32 = 0
     var foodValue: Int32 = 0
     var stressValue: Int32 = 0

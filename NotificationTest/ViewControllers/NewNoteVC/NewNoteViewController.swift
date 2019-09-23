@@ -46,9 +46,6 @@ class NewNoteViewController: UITableViewController {
         newNoteView.addGestureRecognizer(tapGesture)
                 newNoteTextView.translatesAutoresizingMaskIntoConstraints = false
         newNoteTextView.isScrollEnabled = true
-        
-        
-        
     }
     
     @IBOutlet weak var writeNoteButton: UIButton!
