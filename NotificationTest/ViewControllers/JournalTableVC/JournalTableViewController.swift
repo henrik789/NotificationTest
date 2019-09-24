@@ -37,8 +37,6 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    // MARK: - Table view data source
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -95,7 +93,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
             self.detailView.alpha = 1
             self.detailView.layer.borderColor = UIColor.gray.cgColor
             self.detailView.layer.borderWidth = 1
-            self.detailView.frame = CGRect(x: 10, y: 20, width: self.screenWidth - 20, height: self.screenHeight * 0.9)
+            self.detailView.frame = CGRect(x: 10, y: 30, width: self.screenWidth - 20, height: self.screenHeight - 60)
             self.detailView.layer.cornerRadius = 20
             self.detailView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
             self.detailView.backgroundColor = .white
@@ -105,7 +103,6 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
             let tapGesture = UITapGestureRecognizer(target:self, action: aSelector)
             self.detailView.addGestureRecognizer(tapGesture)
         }
-
 
     }
     

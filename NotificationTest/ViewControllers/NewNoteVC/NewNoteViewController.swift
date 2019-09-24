@@ -28,15 +28,14 @@ class NewNoteViewController: UITableViewController {
     @IBAction func writeNoteButton(_ sender: Any) {
         
         view.addSubview(newNoteView)
-        
+        self.navigationController?.navigationBar.layer.zPosition = -1
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.newNoteView.alpha = 1
-            self.newNoteView.layer.borderColor = UIColor.gray.cgColor
+            self.newNoteView.layer.borderColor = UIColor.white.cgColor
             self.newNoteView.layer.borderWidth = 1
-            self.newNoteView.frame = CGRect(x: 10, y: 20, width: self.screenWidth - 20, height: self.screenHeight / 3)
+            self.newNoteView.frame = CGRect(x: 10, y: 20, width: self.screenWidth - 20, height: self.screenHeight / 2)
             self.newNoteView.layer.cornerRadius = 20
-            self.newNoteView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
-            self.newNoteView.backgroundColor = .groupTableViewBackground
+//            self.newNoteView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
         }) { _ in
 
         }
@@ -44,7 +43,7 @@ class NewNoteViewController: UITableViewController {
         let aSelector : Selector = #selector(NewNoteViewController.removeViewFromSuperView)
         let tapGesture = UITapGestureRecognizer(target:self, action: aSelector)
         newNoteView.addGestureRecognizer(tapGesture)
-                newNoteTextView.translatesAutoresizingMaskIntoConstraints = false
+        newNoteTextView.translatesAutoresizingMaskIntoConstraints = false
         newNoteTextView.isScrollEnabled = true
     }
     
@@ -57,7 +56,7 @@ class NewNoteViewController: UITableViewController {
         cloudManager.alcoholValue = Int32(sliderAlcohol.value)
         cloudManager.headlineText = headlineTextView.text
         cloudManager.dailynoteText = newNoteTextView.text
-        
+//        self.navigationController?.hidesBarsOnTap = false
         cloudManager.saveToCloud()
     }
     
@@ -101,7 +100,12 @@ class NewNoteViewController: UITableViewController {
     
     
     func initConfig() {
+//        self.navigationController?.hidesBarsOnTap = true
         writeNoteButton.layer.cornerRadius = 5
+        writeNoteButton.layer.borderWidth = 1
+        writeNoteButton.layer.borderColor = UIColor.blue.cgColor
+        saveToCloud.layer.borderWidth = 1
+        saveToCloud.layer.borderColor = UIColor.blue.cgColor
         saveToCloud.layer.cornerRadius = 5
         newNoteTextView.delegate = self
         newNoteTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
@@ -113,13 +117,14 @@ class NewNoteViewController: UITableViewController {
     @objc func removeViewFromSuperView() {
         if let subView = self.newNoteView{
             subView.removeFromSuperview()
+            self.navigationController?.navigationBar.layer.zPosition = 0
             print("tar bort")
         } else {
             print("ikke!!")
             return
-            
         }
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -132,24 +137,11 @@ extension NewNoteViewController: UITextViewDelegate {
         if textView == newNoteTextView {
             countLabel.text = "\(400 - newNoteTextView.text.count)"
             if newNoteTextView.text.count < 400 {
-//                if autoSize {
-//                    let fixedWidth = newNoteView.frame.size.width
-//                    newNoteTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-//                    let newSize = newNoteTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-//                    var newFrame = newNoteTextView.frame
-//                    newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-//                    newNoteTextView.frame = newFrame
-//                    print(newNoteTextView.frame.size.height, newNoteView.frame.size.height)
-//                    if newNoteTextView.frame.size.height >= newNoteView.frame.size.height - 60 {
-//                        autoSize = false
-//                    }
-//                } else {
-//                    newNoteTextView.isScrollEnabled = true
-//                    newNoteTextView.translatesAutoresizingMaskIntoConstraints = false
-//                }
+
             } else {
                 newNoteTextView.resignFirstResponder()
                 newNoteView.removeFromSuperview()
+                self.navigationController?.navigationBar.layer.zPosition = 0
             }
         }
         else if textView == headlineTextView {
@@ -163,6 +155,7 @@ extension NewNoteViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         resignFirstResponder()
         newNoteView.removeFromSuperview()
+        self.navigationController?.navigationBar.layer.zPosition = 0
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
