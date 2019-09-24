@@ -380,7 +380,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bI0-zC-dcg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bI0-zC-dcg">
                                 <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -397,25 +397,84 @@
                     <navigationItem key="navigationItem" title="Journal" id="6eK-h7-gOy"/>
                     <connections>
                         <outlet property="dateLabel" destination="zwk-OR-JgI" id="L1N-Gz-0WD"/>
+                        <outlet property="detailCloseButton" destination="IYm-7y-6Yn" id="fwW-T5-Lhn"/>
+                        <outlet property="detailDateLabel" destination="zwk-OR-JgI" id="hJi-T7-nCm"/>
+                        <outlet property="detailHeadlineLabel" destination="olO-Zr-rEa" id="MT6-5w-P2A"/>
+                        <outlet property="detailTextView" destination="nja-9E-ypi" id="HdX-Ht-Akl"/>
                         <outlet property="detailView" destination="oOt-99-0vG" id="cwP-Xt-mgm"/>
                         <outlet property="tableView" destination="bI0-zC-dcg" id="GoK-yZ-5pC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUB-Nc-GEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="oOt-99-0vG">
+                <view contentMode="scaleAspectFit" id="oOt-99-0vG" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="370" height="600"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-OR-JgI">
-                            <rect key="frame" x="120" y="35" width="130" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-Pg-F7z">
+                            <rect key="frame" x="20" y="5" width="330" height="465"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-wb-JCD">
+                                    <rect key="frame" x="0.0" y="0.0" width="330" height="64.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYm-7y-6Yn">
+                                            <rect key="frame" x="0.0" y="0.0" width="330" height="30"/>
+                                            <state key="normal" title="Close">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="detailCloseButton:" destination="lfs-nM-4L3" eventType="touchUpInside" id="o0c-Vq-5lz"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-OR-JgI">
+                                            <rect key="frame" x="0.0" y="50" width="330" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olO-Zr-rEa">
+                                    <rect key="frame" x="0.0" y="104.5" width="330" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nja-9E-ypi">
+                                    <rect key="frame" x="0.0" y="165" width="330" height="300"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="HUm-rL-EFL"/>
+                                    </constraints>
+                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="WM7-Hx-irr" firstAttribute="trailing" secondItem="uhg-Pg-F7z" secondAttribute="trailing" constant="20" id="mRv-sZ-oKq"/>
+                        <constraint firstItem="uhg-Pg-F7z" firstAttribute="leading" secondItem="WM7-Hx-irr" secondAttribute="leading" constant="20" id="ubO-cp-e4V"/>
+                        <constraint firstItem="uhg-Pg-F7z" firstAttribute="top" secondItem="WM7-Hx-irr" secondAttribute="top" constant="5" id="wdZ-DD-HwN"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="WM7-Hx-irr"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                            <color key="value" red="0.75527442893401009" green="0.44218981299623955" blue="0.0055009264081450522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                            <color key="value" red="0.76740958121827407" green="0.13735385233523234" blue="0.2603456903183104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                            <real key="value" value="0.80000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </objects>
             <point key="canvasLocation" x="972" y="169.56521739130437"/>
@@ -683,6 +742,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vX8-Ph-18R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-762.39999999999998" y="169.56521739130437"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yzv-Yv-Iem">
+            <objects>
+                <viewController id="Gwl-05-G85" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nnq-99-rpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HM5-aA-EVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1731" y="-527"/>
         </scene>
     </scenes>
 </document>

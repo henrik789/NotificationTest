@@ -30,6 +30,7 @@
 		AFDFEE7C2309F05400C98560 /* SaveToCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */; };
 		AFF8D35C2338ED2E00B135B6 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8D35A2338ED2E00B135B6 /* JournalTableViewCell.swift */; };
 		AFF8D35D2338ED2E00B135B6 /* JournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF8D35B2338ED2E00B135B6 /* JournalTableViewCell.xib */; };
+		AFFC0AE7233A409D00D9B472 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC0AE6233A409D00D9B472 /* Gradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		AFDFEE7D2309F06600C98560 /* NotificationTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationTest.entitlements; sourceTree = "<group>"; };
 		AFF8D35A2338ED2E00B135B6 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		AFF8D35B2338ED2E00B135B6 /* JournalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalTableViewCell.xib; sourceTree = "<group>"; };
+		AFFC0AE6233A409D00D9B472 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				AF2363F1230A7B40002A4650 /* UIButton.swift */,
 				AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */,
 				AFDECAF722C23CD6007B4F5C /* Notification.swift */,
+				AFFC0AE6233A409D00D9B472 /* Gradient.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				AF243670231FE9BE0048E36D /* CloudManager.swift in Sources */,
 				AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */,
 				AFF8D35C2338ED2E00B135B6 /* JournalTableViewCell.swift in Sources */,
+				AFFC0AE7233A409D00D9B472 /* Gradient.swift in Sources */,
 				AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */,
 				AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */,
 				AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */,
