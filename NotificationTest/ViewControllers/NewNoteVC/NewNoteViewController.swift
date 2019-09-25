@@ -1,12 +1,15 @@
 
 import Macaw
 import UIKit
+import CloudKit
 
 class NewNoteViewController: UITableViewController {
     
     var diaryVC = DiaryViewController()
     var cloudManager = CloudManager()
+    var notes = [CKRecord]()
     var timer = Timer()
+    var ifAbletoSave = true
     var autoSize = true
     let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
     let subheadFont = UIFont.preferredFont(forTextStyle: .subheadline)
@@ -35,9 +38,9 @@ class NewNoteViewController: UITableViewController {
             self.newNoteView.layer.borderWidth = 1
             self.newNoteView.frame = CGRect(x: 10, y: 20, width: self.screenWidth - 20, height: self.screenHeight / 2)
             self.newNoteView.layer.cornerRadius = 20
-//            self.newNoteView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
+            //            self.newNoteView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
         }) { _ in
-
+            
         }
         newNoteView.isUserInteractionEnabled = true
         let aSelector : Selector = #selector(NewNoteViewController.removeViewFromSuperView)
@@ -50,14 +53,67 @@ class NewNoteViewController: UITableViewController {
     @IBOutlet weak var writeNoteButton: UIButton!
     @IBOutlet weak var saveToCloud: UIButton!
     @IBAction func saveToCloud(_ sender: Any) {
-        cloudManager.stressValue = Int32(sliderStress.value)
-        cloudManager.foodValue = Int32(sliderFood.value)
-        cloudManager.trainingValue = Int32(sliderTraining.value)
-        cloudManager.alcoholValue = Int32(sliderAlcohol.value)
-        cloudManager.headlineText = headlineTextView.text
-        cloudManager.dailynoteText = newNoteTextView.text
-//        self.navigationController?.hidesBarsOnTap = false
-        cloudManager.saveToCloud()
+        if ifAbletoSave {
+            cloudManager.stressValue = Int32(sliderStress.value)
+            cloudManager.foodValue = Int32(sliderFood.value)
+            cloudManager.trainingValue = Int32(sliderTraining.value)
+            cloudManager.alcoholValue = Int32(sliderAlcohol.value)
+            cloudManager.headlineText = headlineTextView.text
+            cloudManager.dailynoteText = newNoteTextView.text
+            
+            cloudManager.saveToCloud()
+            
+            let alert = UIAlertController(title: "Success!", message: "Your note was saved successfully.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    self.performSegue(withIdentifier: "goToJournal", sender: nil)
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destructive")
+                @unknown default:
+                    fatalError()
+                }}))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destructive")
+                @unknown default:
+                    fatalError()
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            
+            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    self.performSegue(withIdentifier: "goToJournal", sender: nil)
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destructive")
+                @unknown default:
+                    fatalError()
+                }}))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destructive")
+                @unknown default:
+                    fatalError()
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func tapDone(sender: Any) {
@@ -90,7 +146,21 @@ class NewNoteViewController: UITableViewController {
         return UIScreen.main.bounds.height
     }
     
-    
+    //    func canSave() {
+    //
+    //        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+    //        if noteDate != nil {
+    //
+    //        } else {
+    //            let now = Date()
+    //            now.timeIntervalSince(noteDate)
+    //            let formatter = DateComponentsFormatter()
+    //            formatter.allowedUnits = [.hour, .minute]
+    //            let difference = Calendar.current.dateComponents([.hour, .minute], from: noteDate, to: now)
+    //            print(formatter.string(from: noteDate, to: now)!)
+    //            print(difference)
+    //        }
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +170,6 @@ class NewNoteViewController: UITableViewController {
     
     
     func initConfig() {
-//        self.navigationController?.hidesBarsOnTap = true
         writeNoteButton.layer.cornerRadius = 5
         writeNoteButton.layer.borderWidth = 1
         writeNoteButton.layer.borderColor = UIColor.blue.cgColor
@@ -111,6 +180,7 @@ class NewNoteViewController: UITableViewController {
         newNoteTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         headlineTextView.delegate = self
         headlineTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        
     }
     
     
@@ -137,7 +207,7 @@ extension NewNoteViewController: UITextViewDelegate {
         if textView == newNoteTextView {
             countLabel.text = "\(400 - newNoteTextView.text.count)"
             if newNoteTextView.text.count < 400 {
-
+                
             } else {
                 newNoteTextView.resignFirstResponder()
                 newNoteView.removeFromSuperview()

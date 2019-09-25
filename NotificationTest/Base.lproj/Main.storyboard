@@ -297,7 +297,6 @@
                                                             </state>
                                                             <connections>
                                                                 <action selector="saveToCloud:" destination="XHI-9d-K1z" eventType="touchUpInside" id="jwh-Wg-hZ1"/>
-                                                                <segue destination="lfs-nM-4L3" kind="show" id="UXj-ry-xSQ"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -321,7 +320,18 @@
                             <outlet property="delegate" destination="XHI-9d-K1z" id="bL4-MZ-Xdg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4M7-Ns-XNG"/>
+                    <navigationItem key="navigationItem" id="4M7-Ns-XNG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fhL-gm-xOk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lkW-ec-1fI">
+                                <rect key="frame" x="276" y="13" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Diary"/>
+                                <connections>
+                                    <segue destination="lfs-nM-4L3" kind="show" identifier="goToJournal" id="gzZ-dD-htr"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countLabel" destination="tFf-TT-zap" id="Hg5-93-uGs"/>
                         <outlet property="headlineLabel" destination="7hO-VB-OSl" id="6Gr-DP-ZJu"/>

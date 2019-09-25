@@ -31,6 +31,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
         DispatchQueue.main.async {
             self.queryCloud()
         }
+        UserDefaults.standard.set(Date(), forKey:"lastNoteEntry")
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         
@@ -66,7 +67,15 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noteDate = notes[indexPath.row].creationDate
+//        let now = Date()
+//
+//        let formatter = DateComponentsFormatter()
+//        formatter.allowedUnits = [.hour, .minute]
+//        print(formatter.string(from: noteDate!, to: now)!)
+//        let timeDifference = formatter.string(from: noteDate!, to: now)!
+//        print(timeDifference)
         dateFormatter.locale = Locale(identifier: "en_US")
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JournalTableViewCell", for: indexPath) as? JournalTableViewCell
             else {
                 fatalError("The dequeued cell is not an instance of JournalTableViewCell")
@@ -83,6 +92,15 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
         view.addSubview(detailView)
         
         let noteDate = notes[indexPath.row].creationDate
+        let now = Date()
+
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute]
+        print(formatter.string(from: noteDate!, to: now)!)
+        let timeDifference = formatter.string(from: noteDate!, to: now)!
+        print(timeDifference)
+        
+        dateFormatter.locale = Locale(identifier: "en_US")
         detailDateLabel.text = dateFormatter.string(from: noteDate!)
         detailTextView.text = notes[indexPath.row].value(forKey: "dailyEntry") as? String ?? "👍"
         detailHeadlineLabel.text = notes[indexPath.row].value(forKey: "journalEntry") as? String ?? "👍"

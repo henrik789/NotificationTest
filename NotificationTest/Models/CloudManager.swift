@@ -41,18 +41,16 @@ class CloudManager {
     }
     
     
-//    func queryCloud() {
-//        let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
-//        database.perform(query, inZoneWith: nil) { (records, _) in
-//            guard let records = records else {return}
-//            let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
-//            self.notes = sortedRecords
-//            DispatchQueue.main.async {
-//                //                self.tableView.refreshControl?.endRefreshing()
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
-    
-    
+    func queryCloud() -> [CKRecord]{
+        let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
+        database.perform(query, inZoneWith: nil) { (records, _) in
+            guard let records = records else {return}
+            let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
+            
+            DispatchQueue.main.async {
+                self.notes = sortedRecords
+            }
+        }
+        return self.notes
+    }
 }
