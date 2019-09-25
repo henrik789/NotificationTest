@@ -9,7 +9,8 @@ class NewNoteViewController: UITableViewController {
     var cloudManager = CloudManager()
     var notes = [CKRecord]()
     var timer = Timer()
-    var ifAbletoSave = true
+    let dateFormatter = DateFormatter()
+
     var autoSize = true
     let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
     let subheadFont = UIFont.preferredFont(forTextStyle: .subheadline)
@@ -53,17 +54,21 @@ class NewNoteViewController: UITableViewController {
     @IBOutlet weak var writeNoteButton: UIButton!
     @IBOutlet weak var saveToCloud: UIButton!
     @IBAction func saveToCloud(_ sender: Any) {
-        if ifAbletoSave {
+        
+        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+        let saveDate = dateFormatter.string(from: noteDate)
+        
+        if canSave() {
             cloudManager.stressValue = Int32(sliderStress.value)
             cloudManager.foodValue = Int32(sliderFood.value)
             cloudManager.trainingValue = Int32(sliderTraining.value)
             cloudManager.alcoholValue = Int32(sliderAlcohol.value)
             cloudManager.headlineText = headlineTextView.text
             cloudManager.dailynoteText = newNoteTextView.text
-            
+            UserDefaults.standard.set(Date(), forKey:"lastNoteEntry")
             cloudManager.saveToCloud()
             
-            let alert = UIAlertController(title: "Success!", message: "Your note was saved successfully.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Success!", message: "Your note was saved successfully. \(saveDate)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
                 switch action.style{
                 case .default:
@@ -89,7 +94,7 @@ class NewNoteViewController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         } else {
             
-            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day \(saveDate)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
                 switch action.style{
                 case .default:
@@ -146,25 +151,27 @@ class NewNoteViewController: UITableViewController {
         return UIScreen.main.bounds.height
     }
     
-    //    func canSave() {
-    //
-    //        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-    //        if noteDate != nil {
-    //
-    //        } else {
-    //            let now = Date()
-    //            now.timeIntervalSince(noteDate)
-    //            let formatter = DateComponentsFormatter()
-    //            formatter.allowedUnits = [.hour, .minute]
-    //            let difference = Calendar.current.dateComponents([.hour, .minute], from: noteDate, to: now)
-    //            print(formatter.string(from: noteDate, to: now)!)
-    //            print(difference)
-    //        }
-    //    }
+    func canSave() -> Bool{
+        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+        let now = Date()
+        let ifAbleToSave = UserDefaults.standard.bool(forKey: "ifAbleToSave")
+        
+        if ifAbleToSave {
+            UserDefaults.standard.set(false, forKey: "ifAbleToSave")
+            return true
+        } else {
+        let difference = Int(noteDate.timeIntervalSince1970 - now.timeIntervalSince1970) / 3600
+        print(difference)
+        if difference >= 1 {
+            return true
+        }else{
+            return false
+        }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        keyboardConfig()
         initConfig()
     }
     
@@ -180,7 +187,11 @@ class NewNoteViewController: UITableViewController {
         newNoteTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         headlineTextView.delegate = self
         headlineTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-        
+        UserDefaults.standard.register(defaults: ["ifAbleToSave" : true])
+        UserDefaults.standard.register(defaults: ["lastNoteEntry" : Date()])
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale(identifier: "en_US")
     }
     
     

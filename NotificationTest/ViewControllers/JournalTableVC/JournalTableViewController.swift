@@ -31,7 +31,6 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
         DispatchQueue.main.async {
             self.queryCloud()
         }
-        UserDefaults.standard.set(Date(), forKey:"lastNoteEntry")
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         
