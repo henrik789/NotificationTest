@@ -3,7 +3,7 @@ import Macaw
 import UIKit
 import CloudKit
 
-class NewNoteViewController: UITableViewController {
+class NewNoteViewController: UIViewController {
     
     var diaryVC = DiaryViewController()
     var cloudManager = CloudManager()
@@ -15,29 +15,25 @@ class NewNoteViewController: UITableViewController {
     let headlineFont = UIFont.preferredFont(forTextStyle: .headline)
     let subheadFont = UIFont.preferredFont(forTextStyle: .subheadline)
     @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var sliderAlcoholLabel: UILabel!
-    @IBOutlet weak var sliderTrainingLabel: UILabel!
-    @IBOutlet weak var sliderFoodLabel: UILabel!
-    @IBOutlet weak var sliderStressLabel: UILabel!
-    @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var sliderAlcohol: UISlider!
-    @IBOutlet weak var sliderTraining: UISlider!
-    @IBOutlet weak var sliderFood: UISlider!
-    @IBOutlet weak var sliderStress: UISlider!
+
+    @IBOutlet weak var diaryButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet var newNoteTextView: UITextView!
     @IBOutlet var newNoteView: UIView!
     @IBOutlet var headlineTextView: UITextView!
-    
+    @IBOutlet weak var countLabel: UILabel!
     
     @IBAction func writeNoteButton(_ sender: Any) {
         
         view.addSubview(newNoteView)
+        
         self.navigationController?.navigationBar.layer.zPosition = -1
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
+            self.newNoteView.center.x = self.view.center.x
             self.newNoteView.alpha = 1
-            self.newNoteView.layer.borderColor = UIColor.white.cgColor
+            self.newNoteView.layer.borderColor = UIColor.black.cgColor
             self.newNoteView.layer.borderWidth = 1
-            self.newNoteView.frame = CGRect(x: 10, y: 20, width: self.screenWidth - 20, height: self.screenHeight / 2)
+            self.newNoteView.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenWidth * 0.1, width: self.screenWidth * 0.9, height: self.screenHeight / 2)
             self.newNoteView.layer.cornerRadius = 20
             //            self.newNoteView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
         }) { _ in
@@ -59,16 +55,15 @@ class NewNoteViewController: UITableViewController {
         let saveDate = dateFormatter.string(from: noteDate)
         
         if canSave() {
-            cloudManager.stressValue = Int32(sliderStress.value)
-            cloudManager.foodValue = Int32(sliderFood.value)
-            cloudManager.trainingValue = Int32(sliderTraining.value)
-            cloudManager.alcoholValue = Int32(sliderAlcohol.value)
-            cloudManager.headlineText = headlineTextView.text
+
+//            cloudManager.headlineText = headlineTextView.text
             cloudManager.dailynoteText = newNoteTextView.text
             UserDefaults.standard.set(Date(), forKey:"lastNoteEntry")
+            let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+            let saveDate = dateFormatter.string(from: noteDate)
             cloudManager.saveToCloud()
             
-            let alert = UIAlertController(title: "Success!", message: "Your note was saved successfully. \(saveDate)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Success!", message: "Your note was saved successfully. \n\(saveDate)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
                 switch action.style{
                 case .default:
@@ -93,8 +88,9 @@ class NewNoteViewController: UITableViewController {
                 }}))
             self.present(alert, animated: true, completion: nil)
         } else {
-            
-            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day \(saveDate)", preferredStyle: .alert)
+            let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+            let saveDate = dateFormatter.string(from: noteDate)
+            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day. Last note was saved: \(saveDate)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
                 switch action.style{
                 case .default:
@@ -126,22 +122,22 @@ class NewNoteViewController: UITableViewController {
         newNoteView.removeFromSuperview()
     }
     
-    @IBAction func slideAlcoholValueChanged(_ sender: Any) {
-        cloudManager.alcoholValue = Int32(sliderAlcohol.value)
-        sliderAlcoholLabel.text = String(cloudManager.alcoholValue) + "%"
-    }
-    @IBAction func slideTrainingValueChanged(_ sender: Any) {
-        cloudManager.trainingValue = Int32(sliderTraining.value)
-        sliderTrainingLabel.text = String(cloudManager.trainingValue) + "%"
-    }
-    @IBAction func slideFoodValueChanged(_ sender: Any) {
-        cloudManager.foodValue = Int32(sliderFood.value)
-        sliderFoodLabel.text = String(cloudManager.foodValue) + "%"
-    }
-    @IBAction func slideStressValueChanged(_ sender: Any) {
-        cloudManager.stressValue = Int32(sliderStress.value)
-        sliderStressLabel.text = "\(cloudManager.stressValue)%"
-    }
+//    @IBAction func slideAlcoholValueChanged(_ sender: Any) {
+//        cloudManager.alcoholValue = Int32(sliderAlcohol.value)
+//        sliderAlcoholLabel.text = String(cloudManager.alcoholValue) + "%"
+//    }
+//    @IBAction func slideTrainingValueChanged(_ sender: Any) {
+//        cloudManager.trainingValue = Int32(sliderTraining.value)
+//        sliderTrainingLabel.text = String(cloudManager.trainingValue) + "%"
+//    }
+//    @IBAction func slideFoodValueChanged(_ sender: Any) {
+//        cloudManager.foodValue = Int32(sliderFood.value)
+//        sliderFoodLabel.text = String(cloudManager.foodValue) + "%"
+//    }
+//    @IBAction func slideStressValueChanged(_ sender: Any) {
+//        cloudManager.stressValue = Int32(sliderStress.value)
+//        sliderStressLabel.text = "\(cloudManager.stressValue)%"
+//    }
     
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -160,7 +156,7 @@ class NewNoteViewController: UITableViewController {
             UserDefaults.standard.set(false, forKey: "ifAbleToSave")
             return true
         } else {
-        let difference = Int(noteDate.timeIntervalSince1970 - now.timeIntervalSince1970) / 3600
+        let difference = Int(now.timeIntervalSince1970 - noteDate.timeIntervalSince1970) / 3600
         print(difference)
         if difference >= 1 {
             return true
@@ -177,21 +173,36 @@ class NewNoteViewController: UITableViewController {
     
     
     func initConfig() {
-        writeNoteButton.layer.cornerRadius = 5
+        writeNoteButton.layer.cornerRadius = writeNoteButton.frame.height / 2
         writeNoteButton.layer.borderWidth = 1
-        writeNoteButton.layer.borderColor = UIColor.blue.cgColor
+        writeNoteButton.layer.borderColor = UIColor.bgColorOne.cgColor
+        writeNoteButton.backgroundColor = UIColor.clear
+        writeNoteButton.setTitleColor(UIColor.bgColorOne, for: .normal)
         saveToCloud.layer.borderWidth = 1
-        saveToCloud.layer.borderColor = UIColor.blue.cgColor
-        saveToCloud.layer.cornerRadius = 5
+        saveToCloud.layer.borderColor = UIColor.bgColorThree.cgColor
+        saveToCloud.layer.cornerRadius = saveToCloud.frame.height / 2
+        saveToCloud.backgroundColor = UIColor.clear
+        saveToCloud.setTitleColor(UIColor.bgColorThree, for: .normal)
         newNoteTextView.delegate = self
         newNoteTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-        headlineTextView.delegate = self
-        headlineTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+//        headlineTextView.delegate = self
+//        headlineTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         UserDefaults.standard.register(defaults: ["ifAbleToSave" : true])
         UserDefaults.standard.register(defaults: ["lastNoteEntry" : Date()])
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .medium
-        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.locale = Locale(identifier: "sv")
+        infoButton.setTitleColor(UIColor.bgColorFour, for: .normal)
+        infoButton.layer.cornerRadius = infoButton.frame.height / 2
+        infoButton.layer.borderWidth = 1
+        infoButton.layer.borderColor = UIColor.bgColorFour.cgColor
+        infoButton.backgroundColor = UIColor.clear
+        diaryButton.setTitleColor(UIColor.bgColorFive, for: .normal)
+        diaryButton.layer.cornerRadius = diaryButton.frame.height / 2
+        diaryButton.layer.borderWidth = 1
+        diaryButton.layer.borderColor = UIColor.bgColorFive.cgColor
+        diaryButton.backgroundColor = UIColor.clear
+        
     }
     
     
@@ -206,9 +217,6 @@ class NewNoteViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
     
 }
 
@@ -225,12 +233,12 @@ extension NewNoteViewController: UITextViewDelegate {
                 self.navigationController?.navigationBar.layer.zPosition = 0
             }
         }
-        else if textView == headlineTextView {
-            if headlineTextView.text.count > 40 {
-                headlineTextView.resignFirstResponder()
-            }
+//        else if textView == headlineTextView {
+//            if headlineTextView.text.count > 40 {
+//                headlineTextView.resignFirstResponder()
+//            }
         }
-    }
+    
     
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -239,15 +247,15 @@ extension NewNoteViewController: UITextViewDelegate {
         self.navigationController?.navigationBar.layer.zPosition = 0
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if headlineTextView.text == "\n"
-        {
-            headlineTextView.resignFirstResponder()
-            return false
-        }
-        return true
-    }
-    
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if headlineTextView.text == "\n"
+//        {
+//            headlineTextView.resignFirstResponder()
+//            return false
+//        }
+//        return true
+//    }
+
     
 }
 extension UITextView {

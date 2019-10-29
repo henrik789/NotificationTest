@@ -54,7 +54,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     
     @objc func removeViewFromSuperView() {
         if let subView = self.detailView{
-            subView.removeFromSuperview()
+            animateOut()
             self.navigationController?.navigationBar.layer.zPosition = 0
             print("tar bort")
         } else {
@@ -66,13 +66,13 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noteDate = notes[indexPath.row].creationDate
-//        let now = Date()
-//
-//        let formatter = DateComponentsFormatter()
-//        formatter.allowedUnits = [.hour, .minute]
-//        print(formatter.string(from: noteDate!, to: now)!)
-//        let timeDifference = formatter.string(from: noteDate!, to: now)!
-//        print(timeDifference)
+        //        let now = Date()
+        //
+        //        let formatter = DateComponentsFormatter()
+        //        formatter.allowedUnits = [.hour, .minute]
+        //        print(formatter.string(from: noteDate!, to: now)!)
+        //        let timeDifference = formatter.string(from: noteDate!, to: now)!
+        //        print(timeDifference)
         dateFormatter.locale = Locale(identifier: "en_US")
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JournalTableViewCell", for: indexPath) as? JournalTableViewCell
@@ -88,29 +88,41 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationController?.navigationBar.layer.zPosition = -1
-        view.addSubview(detailView)
+        self.view.layoutIfNeeded()
+        
         
         let noteDate = notes[indexPath.row].creationDate
         let now = Date()
-
+        
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         print(formatter.string(from: noteDate!, to: now)!)
         let timeDifference = formatter.string(from: noteDate!, to: now)!
         print(timeDifference)
         
-        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.locale = Locale(identifier: "sv")
         detailDateLabel.text = dateFormatter.string(from: noteDate!)
         detailTextView.text = notes[indexPath.row].value(forKey: "dailyEntry") as? String ?? "👍"
         detailHeadlineLabel.text = notes[indexPath.row].value(forKey: "journalEntry") as? String ?? "👍"
         detailCloseButton.layer.cornerRadius = 8
         detailCloseButton.layer.borderColor = UIColor.white.cgColor
         detailCloseButton.layer.borderWidth = 1
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
+        view.addSubview(detailView)
+        animateIn()
+        
+        
+    }
+    
+    func animateIn() {
+        
+        
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: .curveEaseIn, animations: {
             self.detailView.alpha = 1
-            self.detailView.layer.borderColor = UIColor.gray.cgColor
+            self.detailView.layer.borderColor = UIColor.white.cgColor
             self.detailView.layer.borderWidth = 1
-            self.detailView.frame = CGRect(x: 10, y: 30, width: self.screenWidth - 20, height: self.screenHeight - 60)
+            self.detailView.center = self.view.center
+//            self.detailView.frame = CGRect(x: 10, y: 30, width: self.screenWidth - 20, height: self.screenHeight - 60)
+            self.detailView.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
             self.detailView.layer.cornerRadius = 20
             self.detailView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
             self.detailView.backgroundColor = .white
@@ -120,11 +132,20 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
             let tapGesture = UITapGestureRecognizer(target:self, action: aSelector)
             self.detailView.addGestureRecognizer(tapGesture)
         }
-
+        
     }
     
     
-
+    func animateOut () {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.detailView.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
+            self.detailView.alpha = 0
+            
+        }) { (success:Bool) in
+            self.detailView.removeFromSuperview()
+        }
+    }
+    
     @objc func queryCloud() {
         let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
         database.perform(query, inZoneWith: nil) { (records, _) in
