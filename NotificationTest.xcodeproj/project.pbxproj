@@ -104,6 +104,7 @@
 				AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */,
 				AFDECAF722C23CD6007B4F5C /* Notification.swift */,
 				AFFC0AE6233A409D00D9B472 /* Gradient.swift */,
+				AF24366F231FE9BE0048E36D /* CloudManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -122,7 +123,6 @@
 		AF24366E231FE9A90048E36D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AF24366F231FE9BE0048E36D /* CloudManager.swift */,
 				AF4B82782333665E008BC37F /* JournalModel.xcdatamodeld */,
 			);
 			path = Models;

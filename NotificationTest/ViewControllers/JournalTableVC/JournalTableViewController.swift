@@ -8,7 +8,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var detailDateLabel: UILabel!
-    @IBOutlet weak var detailHeadlineLabel: UILabel!
+//    @IBOutlet weak var detailHeadlineLabel: UILabel!
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var detailCloseButton: UIButton!
     @IBAction func detailCloseButton(_ sender: Any) {
@@ -18,6 +18,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     var cloudMangaer = CloudManager()
 
     let dateFormatter = DateFormatter()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,8 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
         tableView?.delegate = self
         tableView?.dataSource = self
         dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale(identifier: "sv")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +59,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @objc func removeViewFromSuperView() {
-        if let subView = self.detailView{
+        if self.detailView != nil{
             animateOut()
             self.navigationController?.navigationBar.layer.zPosition = 0
             print("tar bort popup")
@@ -71,23 +72,18 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noteDate = cloudMangaer.notes[indexPath.row].creationDate
-        //        let now = Date()
-        //
-        //        let formatter = DateComponentsFormatter()
-        //        formatter.allowedUnits = [.hour, .minute]
-        //        print(formatter.string(from: noteDate!, to: now)!)
-        //        let timeDifference = formatter.string(from: noteDate!, to: now)!
-        //        print(timeDifference)
-        dateFormatter.locale = Locale(identifier: "en_US")
-//        print("Records: " ,cloudMangaer.recordIDs[indexPath.row])
-//        print("Nr records: " ,self.cloudMangaer.recordIDs.count)
+
+        dateFormatter.locale = Locale(identifier: "sv")
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JournalTableViewCell", for: indexPath) as? JournalTableViewCell
             else {
                 fatalError("The dequeued cell is not an instance of JournalTableViewCell")
         }
+
+        let characters = cloudMangaer.notes[indexPath.row].value(forKey: "dailyEntry") as? String ?? "👍"
         cell.dateLabel.text = dateFormatter.string(from: noteDate!)
-        cell.headlineLabel.text = cloudMangaer.notes[indexPath.row].value(forKey: "journalEntry") as? String ?? "👍"
-        cell.emojiLabel.text = cloudMangaer.notes[indexPath.row].value(forKey: "trainingEntry") as? String ?? "👍"
+        cell.headlineLabel.text = cloudMangaer.notes[indexPath.row].value(forKey: "dailyEntry") as? String ?? "👍"
+        cell.emojiLabel.text = "Characters: \(String(describing: characters.count))"
 
         return cell
     }
@@ -175,7 +171,7 @@ class JournalTableViewController: UIViewController, UITableViewDelegate, UITable
         detailDateLabel.text = dateFormatter.string(from: noteDate!)
         detailDateLabel.textColor = UIColor.bgColorFive
         detailTextView.text = cloudMangaer.notes[selectedRow].value(forKey: "dailyEntry") as? String ?? "👍"
-        detailHeadlineLabel.text = cloudMangaer.notes[selectedRow].value(forKey: "journalEntry") as? String ?? "👍"
+//        detailHeadlineLabel.text = cloudMangaer.notes[selectedRow].value(forKey: "journalEntry") as? String ?? "👍"
         detailCloseButton.layer.cornerRadius = detailCloseButton.frame.height / 2
         detailCloseButton.layer.borderColor = UIColor.bgColorFive.cgColor
         detailCloseButton.layer.borderWidth = 1

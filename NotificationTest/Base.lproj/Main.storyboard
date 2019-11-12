@@ -119,10 +119,10 @@
                         <viewLayoutGuide key="safeArea" id="xOm-2n-p4T"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
                                 <real key="value" value="0.050000000000000003"/>
@@ -157,26 +157,17 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xZn-8G-w4E">
                             <rect key="frame" x="0.0" y="45" width="300" height="235"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Din rubrik här" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="DME-il-frx">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-sK-RR8">
-                                    <rect key="frame" x="0.0" y="40" width="300" height="195"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="235"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="DME-il-frx" firstAttribute="top" secondItem="xZn-8G-w4E" secondAttribute="top" id="E53-n8-tIR"/>
                                 <constraint firstAttribute="bottom" secondItem="lnN-sK-RR8" secondAttribute="bottom" id="HEX-WF-TfU"/>
-                                <constraint firstAttribute="trailing" secondItem="DME-il-frx" secondAttribute="trailing" id="dl3-1M-VIY"/>
                                 <constraint firstItem="lnN-sK-RR8" firstAttribute="leading" secondItem="xZn-8G-w4E" secondAttribute="leading" id="wta-Fa-wLd"/>
                                 <constraint firstAttribute="trailing" secondItem="lnN-sK-RR8" secondAttribute="trailing" id="yo6-lQ-L0A"/>
-                                <constraint firstItem="DME-il-frx" firstAttribute="leading" secondItem="xZn-8G-w4E" secondAttribute="leading" id="z6A-Qb-GRj"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -219,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bI0-zC-dcg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="60" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bI0-zC-dcg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -238,15 +229,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-gq-APl">
+                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-gq-APl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ckD-Xa-Vqv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <vibrancyEffect>
-                                    <blurEffect style="regular"/>
-                                </vibrancyEffect>
+                                <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -287,7 +276,6 @@
                         <outlet property="dateLabel" destination="zwk-OR-JgI" id="L1N-Gz-0WD"/>
                         <outlet property="detailCloseButton" destination="IYm-7y-6Yn" id="fwW-T5-Lhn"/>
                         <outlet property="detailDateLabel" destination="zwk-OR-JgI" id="hJi-T7-nCm"/>
-                        <outlet property="detailHeadlineLabel" destination="olO-Zr-rEa" id="MT6-5w-P2A"/>
                         <outlet property="detailTextView" destination="nja-9E-ypi" id="HdX-Ht-Akl"/>
                         <outlet property="detailView" destination="oOt-99-0vG" id="cwP-Xt-mgm"/>
                         <outlet property="navItem" destination="aaH-AW-2XN" id="4wi-Bx-C3J"/>
@@ -300,7 +288,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-Pg-F7z">
-                            <rect key="frame" x="20" y="20" width="330" height="483"/>
+                            <rect key="frame" x="20" y="20" width="330" height="419.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-wb-JCD">
                                     <rect key="frame" x="0.0" y="0.0" width="330" height="79.5"/>
@@ -323,13 +311,8 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olO-Zr-rEa">
-                                    <rect key="frame" x="0.0" y="119.5" width="330" height="23.5"/>
-                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nja-9E-ypi">
-                                    <rect key="frame" x="0.0" y="183" width="330" height="300"/>
+                                    <rect key="frame" x="0.0" y="119.5" width="330" height="300"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="HUm-rL-EFL"/>
                                     </constraints>
@@ -372,7 +355,7 @@
         <scene sceneID="LlQ-B1-zOh">
             <objects>
                 <viewController id="dUA-wq-5wd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XfS-1H-yGt" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
+                    <view key="view" contentMode="scaleAspectFill" id="XfS-1H-yGt" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
