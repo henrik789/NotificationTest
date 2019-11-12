@@ -10,19 +10,15 @@ import UIKit
 import CloudKit
 
 enum JournalKeys: String {
-    case journalEntry = "journalEntry", alcoEntry = "alcoEntry", foodEntry = "foodEntry",
-    trainingEntry = "trainingEntry" , dailyEntry = "dailyEntry", journalRecordId = "journalRecordId"
-    
+    case journalEntry = "journalEntry", dailyEntry = "dailyEntry", journalRecordId = "journalRecordId"
 }
 
 class CloudManager {
     
+    var recordIDs = [CKRecord.ID]()
     var notes = [CKRecord]()
     let database = CKContainer.default().privateCloudDatabase
-    var alcoholValue: Int32 = 0
-    var foodValue: Int32 = 0
-    var stressValue: Int32 = 0
-    var trainingValue: Int32 = 0
+
     var headlineText: String = ""
     var dailynoteText: String = ""
     
@@ -30,14 +26,36 @@ class CloudManager {
         
         let newNote = CKRecord(recordType: "Note")
         newNote.setValue(headlineText, forKey: JournalKeys.journalEntry.rawValue)
-        newNote.setValue(alcoholValue, forKey: JournalKeys.alcoEntry.rawValue)
-        newNote.setValue(trainingValue, forKey: JournalKeys.trainingEntry.rawValue)
         newNote.setValue(dailynoteText, forKey: JournalKeys.dailyEntry.rawValue)
         database.save(newNote) { (record, error) in
             print(error as Any , error.debugDescription)
             guard record != nil else {return}
             print("saved")
         }
+    }
+    
+    func updateCloud(record: CKRecord) {
+        database.fetch(withRecordID: record.recordID) { (record, error) in
+            if error == nil {
+                print(record as Any)
+            } else {
+                print("Could not fetch record")
+            }
+        }
+        
+    }
+    
+    func deletepost(item: CKRecord) {
+        database.delete(withRecordID: item.recordID) { (deletedrecordID, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    print("Record Deleted: " ,deletedrecordID as Any)
+                } else {
+                    print("Record Not Deleted")
+                }
+            }
+        }
+        updateCloud(record: item)
     }
     
     

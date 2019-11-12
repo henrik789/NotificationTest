@@ -51,10 +51,10 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var saveToCloud: UIButton!
     @IBAction func saveToCloud(_ sender: Any) {
         
-        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-        let saveDate = dateFormatter.string(from: noteDate)
+//        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+//        let saveDate = dateFormatter.string(from: noteDate)
         
-        if canSave() {
+//        if canSave() {
 
 //            cloudManager.headlineText = headlineTextView.text
             cloudManager.dailynoteText = newNoteTextView.text
@@ -67,7 +67,10 @@ class NewNoteViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
                 switch action.style{
                 case .default:
-                    self.performSegue(withIdentifier: "goToJournal", sender: nil)
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "goToJournal", sender: nil)
+                    }
+                    
                 case .cancel:
                     print("cancel")
                 case .destructive:
@@ -87,34 +90,34 @@ class NewNoteViewController: UIViewController {
                     fatalError()
                 }}))
             self.present(alert, animated: true, completion: nil)
-        } else {
-            let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-            let saveDate = dateFormatter.string(from: noteDate)
-            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day. Last note was saved: \(saveDate)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
-                switch action.style{
-                case .default:
-                    self.performSegue(withIdentifier: "goToJournal", sender: nil)
-                case .cancel:
-                    print("cancel")
-                case .destructive:
-                    print("destructive")
-                @unknown default:
-                    fatalError()
-                }}))
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                switch action.style{
-                case .default:
-                    print("default")
-                case .cancel:
-                    print("cancel")
-                case .destructive:
-                    print("destructive")
-                @unknown default:
-                    fatalError()
-                }}))
-            self.present(alert, animated: true, completion: nil)
-        }
+//        } else {
+//            let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+//            let saveDate = dateFormatter.string(from: noteDate)
+//            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day. Last note was saved: \(saveDate)", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
+//                switch action.style{
+//                case .default:
+//                    self.performSegue(withIdentifier: "goToJournal", sender: nil)
+//                case .cancel:
+//                    print("cancel")
+//                case .destructive:
+//                    print("destructive")
+//                @unknown default:
+//                    fatalError()
+//                }}))
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//                switch action.style{
+//                case .default:
+//                    print("default")
+//                case .cancel:
+//                    print("cancel")
+//                case .destructive:
+//                    print("destructive")
+//                @unknown default:
+//                    fatalError()
+//                }}))
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
     
     @objc func tapDone(sender: Any) {
@@ -122,22 +125,6 @@ class NewNoteViewController: UIViewController {
         newNoteView.removeFromSuperview()
     }
     
-//    @IBAction func slideAlcoholValueChanged(_ sender: Any) {
-//        cloudManager.alcoholValue = Int32(sliderAlcohol.value)
-//        sliderAlcoholLabel.text = String(cloudManager.alcoholValue) + "%"
-//    }
-//    @IBAction func slideTrainingValueChanged(_ sender: Any) {
-//        cloudManager.trainingValue = Int32(sliderTraining.value)
-//        sliderTrainingLabel.text = String(cloudManager.trainingValue) + "%"
-//    }
-//    @IBAction func slideFoodValueChanged(_ sender: Any) {
-//        cloudManager.foodValue = Int32(sliderFood.value)
-//        sliderFoodLabel.text = String(cloudManager.foodValue) + "%"
-//    }
-//    @IBAction func slideStressValueChanged(_ sender: Any) {
-//        cloudManager.stressValue = Int32(sliderStress.value)
-//        sliderStressLabel.text = "\(cloudManager.stressValue)%"
-//    }
     
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -147,24 +134,24 @@ class NewNoteViewController: UIViewController {
         return UIScreen.main.bounds.height
     }
     
-    func canSave() -> Bool{
-        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-        let now = Date()
-        let ifAbleToSave = UserDefaults.standard.bool(forKey: "ifAbleToSave")
-        
-        if ifAbleToSave {
-            UserDefaults.standard.set(false, forKey: "ifAbleToSave")
-            return true
-        } else {
-        let difference = Int(now.timeIntervalSince1970 - noteDate.timeIntervalSince1970) / 3600
-        print(difference)
-        if difference >= 1 {
-            return true
-        }else{
-            return false
-        }
-        }
-    }
+//    func canSave() -> Bool{
+//        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
+//        let now = Date()
+//        let ifAbleToSave = UserDefaults.standard.bool(forKey: "ifAbleToSave")
+//
+//        if ifAbleToSave {
+//            UserDefaults.standard.set(false, forKey: "ifAbleToSave")
+//            return true
+//        } else {
+//        let difference = Int(now.timeIntervalSince1970 - noteDate.timeIntervalSince1970) / 3600
+//        print(difference)
+//        if difference >= 1 {
+//            return true
+//        }else{
+//            return false
+//        }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,10 +160,11 @@ class NewNoteViewController: UIViewController {
     
     
     func initConfig() {
-        writeNoteButton.layer.cornerRadius = writeNoteButton.frame.height / 2
+        
         writeNoteButton.layer.borderWidth = 1
         writeNoteButton.layer.borderColor = UIColor.bgColorOne.cgColor
         writeNoteButton.backgroundColor = UIColor.clear
+        writeNoteButton.layer.cornerRadius = writeNoteButton.frame.height / 2
         writeNoteButton.setTitleColor(UIColor.bgColorOne, for: .normal)
         saveToCloud.layer.borderWidth = 1
         saveToCloud.layer.borderColor = UIColor.bgColorThree.cgColor
@@ -185,8 +173,7 @@ class NewNoteViewController: UIViewController {
         saveToCloud.setTitleColor(UIColor.bgColorThree, for: .normal)
         newNoteTextView.delegate = self
         newNoteTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-//        headlineTextView.delegate = self
-//        headlineTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+
         UserDefaults.standard.register(defaults: ["ifAbleToSave" : true])
         UserDefaults.standard.register(defaults: ["lastNoteEntry" : Date()])
         dateFormatter.dateStyle = .short

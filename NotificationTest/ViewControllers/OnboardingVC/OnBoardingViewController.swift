@@ -28,34 +28,34 @@ class OnBoardingViewController: UIViewController, PaperOnboardingDataSource, Pap
     
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
         
-        let titleFont = UIFont(name: "Helvetica Neue", size: 23)
-        let descrriptionfont = UIFont(name: "Helvetica Neue", size: 12)
+        let titleFont = UIFont(name: "Avenir Next", size: 23)
+        let descrriptionfont = UIFont(name: "Avenir Next", size: 15)
         
         return [
-            OnboardingItemInfo(informationImage: UIImage(named: "cloud")!,
-                               title: "No login required",
-                               description: "Your data is saved on your iColud account. This enables you to keep your data even if you change device.",
-                               pageIcon: UIImage(named: "MyDJ_White")!,
+            OnboardingItemInfo(informationImage: UIImage(named: "MyDJ_White")!,
+                               title: "Easy notes!",
+                               description: "Make daily notes and keep them in safe place.",
+                               pageIcon: UIImage(named: "small")!,
                                color: UIColor.bgColorOne,
                                titleColor: UIColor.white,
                                descriptionColor: UIColor.white,
                                titleFont: titleFont!,
                                descriptionFont: descrriptionfont!, descriptionLabelPadding: 30),
             
-            OnboardingItemInfo(informationImage: UIImage(named: "privacy")!,
-                               title: "Privacy",
-                               description: "Your data is kept private for you. No one else can access the data you provide in the DailyJournal app.",
-                               pageIcon: UIImage(named: "MyDJ_White")!,
+            OnboardingItemInfo(informationImage: UIImage(named: "cloud")!,
+                               title: "No login required",
+                               description: "Your data is saved on your iCloud account. This enables you to keep your data even if you change device.",
+                               pageIcon: UIImage(named: "small")!,
                                color: UIColor.bgColorTwo,
                                titleColor: UIColor.white,
                                descriptionColor: UIColor.white,
                                titleFont: titleFont!,
                                descriptionFont: descrriptionfont!, descriptionLabelPadding: 30),
 
-            OnboardingItemInfo(informationImage: UIImage(named: "touche")!,
+            OnboardingItemInfo(informationImage: UIImage(named: "privacy")!,
                                title: "Simple notes, Easy access",
-                               description: "You are allowed to make one note per day. This is to keep focus on writing what you really want to save.\n However you can always access your journal to read previous made notes.",
-                               pageIcon: UIImage(named: "MyDJ_White")!,
+                               description: "Your data is kept private for you. No one else can access the data you provide in the DailyJournal app.",
+                               pageIcon: UIImage(named: "small")!,
                                color: UIColor.bgColorFive,
                                titleColor: UIColor.white,
                                descriptionColor: UIColor.white,
