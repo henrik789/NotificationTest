@@ -51,12 +51,6 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var saveToCloud: UIButton!
     @IBAction func saveToCloud(_ sender: Any) {
         
-//        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-//        let saveDate = dateFormatter.string(from: noteDate)
-        
-//        if canSave() {
-
-//            cloudManager.headlineText = headlineTextView.text
             cloudManager.dailynoteText = newNoteTextView.text
             UserDefaults.standard.set(Date(), forKey:"lastNoteEntry")
             let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
@@ -90,34 +84,6 @@ class NewNoteViewController: UIViewController {
                     fatalError()
                 }}))
             self.present(alert, animated: true, completion: nil)
-//        } else {
-//            let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-//            let saveDate = dateFormatter.string(from: noteDate)
-//            let alert = UIAlertController(title: "Couldn't save", message: "Your last save was less than 24 hours ago. You're only allowed one note per day. Last note was saved: \(saveDate)", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Go to Journal", style: .default, handler: { action in
-//                switch action.style{
-//                case .default:
-//                    self.performSegue(withIdentifier: "goToJournal", sender: nil)
-//                case .cancel:
-//                    print("cancel")
-//                case .destructive:
-//                    print("destructive")
-//                @unknown default:
-//                    fatalError()
-//                }}))
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//                switch action.style{
-//                case .default:
-//                    print("default")
-//                case .cancel:
-//                    print("cancel")
-//                case .destructive:
-//                    print("destructive")
-//                @unknown default:
-//                    fatalError()
-//                }}))
-//            self.present(alert, animated: true, completion: nil)
-//        }
     }
     
     @objc func tapDone(sender: Any) {
@@ -134,24 +100,6 @@ class NewNoteViewController: UIViewController {
         return UIScreen.main.bounds.height
     }
     
-//    func canSave() -> Bool{
-//        let noteDate = UserDefaults.standard.object(forKey: "lastNoteEntry") as! Date
-//        let now = Date()
-//        let ifAbleToSave = UserDefaults.standard.bool(forKey: "ifAbleToSave")
-//
-//        if ifAbleToSave {
-//            UserDefaults.standard.set(false, forKey: "ifAbleToSave")
-//            return true
-//        } else {
-//        let difference = Int(now.timeIntervalSince1970 - noteDate.timeIntervalSince1970) / 3600
-//        print(difference)
-//        if difference >= 1 {
-//            return true
-//        }else{
-//            return false
-//        }
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,6 +120,7 @@ class NewNoteViewController: UIViewController {
         saveToCloud.backgroundColor = UIColor.clear
         saveToCloud.setTitleColor(UIColor.bgColorThree, for: .normal)
         newNoteTextView.delegate = self
+        newNoteView.backgroundColor = UIColor.white
         newNoteTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
 
         UserDefaults.standard.register(defaults: ["ifAbleToSave" : true])
@@ -220,11 +169,7 @@ extension NewNoteViewController: UITextViewDelegate {
                 self.navigationController?.navigationBar.layer.zPosition = 0
             }
         }
-//        else if textView == headlineTextView {
-//            if headlineTextView.text.count > 40 {
-//                headlineTextView.resignFirstResponder()
-//            }
-        }
+    }
     
     
     
@@ -233,15 +178,6 @@ extension NewNoteViewController: UITextViewDelegate {
         newNoteView.removeFromSuperview()
         self.navigationController?.navigationBar.layer.zPosition = 0
     }
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if headlineTextView.text == "\n"
-//        {
-//            headlineTextView.resignFirstResponder()
-//            return false
-//        }
-//        return true
-//    }
 
     
 }

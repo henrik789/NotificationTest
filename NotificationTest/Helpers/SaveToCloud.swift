@@ -1,4 +1,5 @@
 
+
 import UIKit
 import CloudKit
 
@@ -27,7 +28,7 @@ class SaveToCloud {
             let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
             self.notes = sortedRecords
             DispatchQueue.main.async {
-//                self.diary.collectionView.refreshControl?.endRefreshing()
+                //                self.diary.collectionView.refreshControl?.endRefreshing()
                 self.diary.collectionView.reloadData()
             }
         }

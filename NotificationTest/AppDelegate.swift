@@ -13,12 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let initVC = sb.instantiateViewController(withIdentifier: "onboarding")
-//        let userDefaults = UserDefaults.standard
-//        if userDefaults.bool(forKey: "onboarding complete") {
-//            initVC = sb.instantiateViewController(withIdentifier: "mainapp")
-//        }
-        window?.rootViewController = initVC
+        window?.rootViewController = sb.instantiateViewController(withIdentifier: "Mainapp")
         window?.makeKeyAndVisible()
         
         return true

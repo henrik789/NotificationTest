@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		38520BD3B6CB23F83BBF2760 /* Pods_NotificationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F575ABB3DB17B893FF6B90 /* Pods_NotificationTest.framework */; };
-		AF2363F0230A794A002A4650 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363EF230A794A002A4650 /* UIView.swift */; };
 		AF2363F2230A7B40002A4650 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F1230A7B40002A4650 /* UIButton.swift */; };
 		AF2363F5230BCB1F002A4650 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */; };
 		AF2363F7230BCC03002A4650 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2363F6230BCC03002A4650 /* TextViewController.swift */; };
@@ -22,22 +21,21 @@
 		AF6E92F0233616120050F643 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6E92EF233616120050F643 /* JournalTableViewController.swift */; };
 		AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */; };
 		AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */; };
+		AFD185B3237B54050079A0E5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD185B2237B54050079A0E5 /* InfoViewController.swift */; };
 		AFDECAE622C23CA6007B4F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */; };
 		AFDECAEB22C23CA6007B4F5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAE922C23CA6007B4F5C /* Main.storyboard */; };
 		AFDECAED22C23CA7007B4F5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAEC22C23CA7007B4F5C /* Assets.xcassets */; };
 		AFDECAF022C23CA7007B4F5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDECAEE22C23CA7007B4F5C /* LaunchScreen.storyboard */; };
 		AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDECAF722C23CD6007B4F5C /* Notification.swift */; };
-		AFDFEE7C2309F05400C98560 /* SaveToCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */; };
+		AFE55793237D9934000059E4 /* SaveToCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE55792237D9934000059E4 /* SaveToCloud.swift */; };
 		AFF8D35C2338ED2E00B135B6 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8D35A2338ED2E00B135B6 /* JournalTableViewCell.swift */; };
 		AFF8D35D2338ED2E00B135B6 /* JournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF8D35B2338ED2E00B135B6 /* JournalTableViewCell.xib */; };
-		AFFC0AE7233A409D00D9B472 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC0AE6233A409D00D9B472 /* Gradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18770412D78F5B4A6C74B409 /* Pods-NotificationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationTest/Pods-NotificationTest.debug.xcconfig"; sourceTree = "<group>"; };
 		22F575ABB3DB17B893FF6B90 /* Pods_NotificationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CBFE78A8A7069B5C6DB6C2 /* Pods-NotificationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationTest/Pods-NotificationTest.release.xcconfig"; sourceTree = "<group>"; };
-		AF2363EF230A794A002A4650 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AF2363F1230A7B40002A4650 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		AF2363F4230BCB1F002A4650 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		AF2363F6230BCC03002A4650 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +49,7 @@
 		AF6E92EF233616120050F643 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4022C5FE990019EBAE /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		AF7E0F4222C5FF620019EBAE /* OnBoardingview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingview.swift; sourceTree = "<group>"; };
+		AFD185B2237B54050079A0E5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AFDECAE222C23CA6007B4F5C /* DailyJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDECAE522C23CA6007B4F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDECAEA22C23CA6007B4F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,11 +57,10 @@
 		AFDECAEF22C23CA7007B4F5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFDECAF122C23CA7007B4F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFDECAF722C23CD6007B4F5C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToCloud.swift; sourceTree = "<group>"; };
 		AFDFEE7D2309F06600C98560 /* NotificationTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationTest.entitlements; sourceTree = "<group>"; };
+		AFE55792237D9934000059E4 /* SaveToCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToCloud.swift; sourceTree = "<group>"; };
 		AFF8D35A2338ED2E00B135B6 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		AFF8D35B2338ED2E00B135B6 /* JournalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalTableViewCell.xib; sourceTree = "<group>"; };
-		AFFC0AE6233A409D00D9B472 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +97,10 @@
 		AF2363F3230BCAB9002A4650 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AF2363EF230A794A002A4650 /* UIView.swift */,
 				AF2363F1230A7B40002A4650 /* UIButton.swift */,
-				AFDFEE7B2309F05400C98560 /* SaveToCloud.swift */,
 				AFDECAF722C23CD6007B4F5C /* Notification.swift */,
-				AFFC0AE6233A409D00D9B472 /* Gradient.swift */,
 				AF24366F231FE9BE0048E36D /* CloudManager.swift */,
+				AFE55792237D9934000059E4 /* SaveToCloud.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -112,6 +108,7 @@
 		AF2363FA230BCCD8002A4650 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AFD185B2237B54050079A0E5 /* InfoViewController.swift */,
 				AF6E92ED23360E2B0050F643 /* Old */,
 				AF6E92EC23360E0D0050F643 /* NewNoteVC */,
 				AF6E92EB23360DF60050F643 /* JournalTableVC */,
@@ -326,7 +323,8 @@
 				AF243670231FE9BE0048E36D /* CloudManager.swift in Sources */,
 				AF7E0F4322C5FF620019EBAE /* OnBoardingview.swift in Sources */,
 				AFF8D35C2338ED2E00B135B6 /* JournalTableViewCell.swift in Sources */,
-				AFFC0AE7233A409D00D9B472 /* Gradient.swift in Sources */,
+				AFD185B3237B54050079A0E5 /* InfoViewController.swift in Sources */,
+				AFE55793237D9934000059E4 /* SaveToCloud.swift in Sources */,
 				AF2E10252316C22F008DA6E7 /* NewNoteViewController.swift in Sources */,
 				AF2363F9230BCC7E002A4650 /* DiaryViewController.swift in Sources */,
 				AF2363FD230C807E002A4650 /* DiaryCollectionViewCell.swift in Sources */,
@@ -335,10 +333,8 @@
 				AF2363F2230A7B40002A4650 /* UIButton.swift in Sources */,
 				AF6E92F0233616120050F643 /* JournalTableViewController.swift in Sources */,
 				AF2363F7230BCC03002A4650 /* TextViewController.swift in Sources */,
-				AF2363F0230A794A002A4650 /* UIView.swift in Sources */,
 				AFDECAF822C23CD6007B4F5C /* Notification.swift in Sources */,
 				AF7E0F4122C5FE990019EBAE /* OnBoardingViewController.swift in Sources */,
-				AFDFEE7C2309F05400C98560 /* SaveToCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

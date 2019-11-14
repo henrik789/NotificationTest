@@ -33,7 +33,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2OL-BS-l5d" kind="show" id="myR-TR-si4"/>
+                                    <segue destination="2OL-BS-l5d" kind="show" identifier="Mainapp" id="myR-TR-si4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,8 +60,8 @@
         <!--New Note View Controller-->
         <scene sceneID="Gxu-gE-nKw">
             <objects>
-                <viewController id="2OL-BS-l5d" customClass="NewNoteViewController" customModule="DailyJournal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="617-1H-Jg9" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
+                <viewController storyboardIdentifier="Mainapp" id="2OL-BS-l5d" customClass="NewNoteViewController" customModule="DailyJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="617-1H-Jg9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -117,22 +117,6 @@
                             <constraint firstItem="G7T-Yh-TTc" firstAttribute="top" secondItem="xOm-2n-p4T" secondAttribute="top" constant="40" id="nBX-ZZ-Rk4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xOm-2n-p4T"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                                <real key="value" value="0.050000000000000003"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                                <real key="value" value="0.94999999999999996"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="tFf-TT-zap" id="y7b-bW-Lz2"/>
@@ -145,7 +129,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uJ-do-10K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="ZmD-qj-fgj" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
+                <view contentMode="scaleToFill" id="ZmD-qj-fgj">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -182,22 +166,6 @@
                         <constraint firstItem="xZn-8G-w4E" firstAttribute="top" secondItem="BoX-mJ-Oes" secondAttribute="top" constant="45" id="tjk-ac-OVW"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="BoX-mJ-Oes"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                            <real key="value" value="0.050000000000000003"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                            <real key="value" value="0.94999999999999996"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                 </view>
             </objects>
             <point key="canvasLocation" x="220" y="169.56521739130437"/>
@@ -229,13 +197,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-gq-APl">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-gq-APl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ckD-Xa-Vqv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,22 +221,6 @@
                             <constraint firstItem="YFZ-2t-8Mv" firstAttribute="trailing" secondItem="bI0-zC-dcg" secondAttribute="trailing" id="sUn-Cc-IqJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YFZ-2t-8Mv"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                                <real key="value" value="0.050000000000000003"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                                <real key="value" value="0.94999999999999996"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Journal" id="6eK-h7-gOy"/>
                     <connections>
@@ -283,7 +235,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUB-Nc-GEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleAspectFit" id="oOt-99-0vG" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
+                <view contentMode="scaleAspectFit" id="oOt-99-0vG">
                     <rect key="frame" x="0.0" y="0.0" width="370" height="600"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -331,22 +283,6 @@
                         <constraint firstItem="uhg-Pg-F7z" firstAttribute="top" secondItem="oOt-99-0vG" secondAttribute="top" constant="20" id="wdZ-DD-HwN"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="WM7-Hx-irr"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                            <real key="value" value="0.20000000000000001"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                            <real key="value" value="0.80000000000000004"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                 </view>
             </objects>
             <point key="canvasLocation" x="1101.5999999999999" y="169.56521739130437"/>
@@ -355,115 +291,65 @@
         <scene sceneID="LlQ-B1-zOh">
             <objects>
                 <viewController id="dUA-wq-5wd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFill" id="XfS-1H-yGt" customClass="GradientView" customModule="DailyJournal" customModuleProvider="target">
+                    <view key="view" contentMode="scaleAspectFill" id="XfS-1H-yGt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyDJ" translatesAutoresizingMaskIntoConstraints="NO" id="Gu4-BF-Z9d">
-                                <rect key="frame" x="30" y="52" width="305" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="fbf-5Z-6wY"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nQ1-5K-vru">
-                                <rect key="frame" x="31" y="417" width="312" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lNC-6h-g15">
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="yX4-MV-8dP">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="80U-mp-FX5"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="J1W-dr-q3R"/>
-                                            <constraint firstAttribute="width" secondItem="yX4-MV-8dP" secondAttribute="height" multiplier="1:1" id="WZi-cQ-Yko"/>
-                                            <constraint firstAttribute="width" constant="90" id="xfA-LC-dX3"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyDJ" translatesAutoresizingMaskIntoConstraints="NO" id="Gu4-BF-Z9d">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="154.5"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacy" translatesAutoresizingMaskIntoConstraints="NO" id="T36-Qs-2z1">
-                                        <rect key="frame" x="110" y="0.0" width="90" height="90"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="T36-Qs-2z1" secondAttribute="height" multiplier="1:1" id="1Fd-uQ-baB"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="9me-fm-uqg"/>
-                                            <constraint firstAttribute="height" constant="90" id="J54-DV-wmV"/>
-                                            <constraint firstAttribute="width" constant="90" id="uXn-MN-oTh"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touche" translatesAutoresizingMaskIntoConstraints="NO" id="p94-Sy-CMC">
-                                        <rect key="frame" x="220" y="0.0" width="92" height="90"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="JfX-mx-MXu"/>
-                                            <constraint firstAttribute="width" secondItem="p94-Sy-CMC" secondAttribute="height" multiplier="46:45" id="pmK-yk-bfg"/>
-                                            <constraint firstAttribute="width" constant="92" id="xoH-uI-PUQ"/>
-                                        </constraints>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PY2-3V-7zu">
+                                        <rect key="frame" x="0.0" y="154.5" width="345" height="154"/>
+                                        <string key="text">Your data is saved on your iCloud account. This enables you to keep your data even if you change device. Your data is kept private for you. No one else can access the data you provide in the DailyJournal app. You are allowed to make one note per day. This is to keep focus on writing what you really want to save.\n However you can always access your journal to read previous made notes.</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nQ1-5K-vru">
+                                        <rect key="frame" x="69.5" y="308.5" width="206" height="154.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="yX4-MV-8dP">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="154.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacy" translatesAutoresizingMaskIntoConstraints="NO" id="T36-Qs-2z1">
+                                                <rect key="frame" x="113" y="0.0" width="93" height="154.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7v-x4-mf9">
+                                        <rect key="frame" x="0.0" y="463" width="345" height="154"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="2OL-BS-l5d" kind="show" id="K73-7M-xjm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="nQ1-5K-vru" firstAttribute="width" secondItem="lNC-6h-g15" secondAttribute="height" multiplier="1:3" id="FdA-tQ-ctI"/>
+                                    <constraint firstItem="I7v-x4-mf9" firstAttribute="width" secondItem="lNC-6h-g15" secondAttribute="width" id="vWf-4C-wBB"/>
+                                </constraints>
                             </stackView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L4G-ut-kxF">
-                                <rect key="frame" x="286" y="591" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show onboarding screen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkX-6J-Vcs">
-                                <rect key="frame" x="40" y="598" width="177" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7v-x4-mf9">
-                                <rect key="frame" x="30" y="40" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="2OL-BS-l5d" kind="show" id="K73-7M-xjm"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PY2-3V-7zu">
-                                <rect key="frame" x="30" y="80" width="315" height="317"/>
-                                <string key="text">Your data is saved on your iColud account. This enables you to keep your data even if you change device. Your data is kept private for you. No one else can access the data you provide in the DailyJournal app. You are allowed to make one note per day. This is to keep focus on writing what you really want to save.\n However you can always access your journal to read previous made notes.</string>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PY2-3V-7zu" firstAttribute="leading" secondItem="Yts-bQ-gwH" secondAttribute="leading" constant="30" id="27k-bv-of2"/>
-                            <constraint firstItem="nkX-6J-Vcs" firstAttribute="leading" secondItem="Yts-bQ-gwH" secondAttribute="leading" constant="40" id="29G-WE-j7P"/>
-                            <constraint firstItem="Gu4-BF-Z9d" firstAttribute="top" secondItem="Yts-bQ-gwH" secondAttribute="top" constant="32" id="2Ld-wC-Zrr"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="trailing" secondItem="nQ1-5K-vru" secondAttribute="trailing" constant="32" id="5j1-rO-qkj"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="trailing" secondItem="L4G-ut-kxF" secondAttribute="trailing" constant="40" id="7ve-27-aCR"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="bottom" secondItem="nkX-6J-Vcs" secondAttribute="bottom" constant="50" id="DCs-hY-41h"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="trailing" secondItem="PY2-3V-7zu" secondAttribute="trailing" constant="30" id="I8G-tR-dJd"/>
-                            <constraint firstItem="I7v-x4-mf9" firstAttribute="leading" secondItem="Yts-bQ-gwH" secondAttribute="leading" constant="30" id="MWp-KB-iRT"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="bottom" secondItem="nQ1-5K-vru" secondAttribute="bottom" constant="160" id="X1y-qr-yJL"/>
-                            <constraint firstItem="L4G-ut-kxF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nkX-6J-Vcs" secondAttribute="trailing" constant="8" symbolic="YES" id="Xo1-6u-5rv"/>
-                            <constraint firstItem="Gu4-BF-Z9d" firstAttribute="leading" secondItem="I7v-x4-mf9" secondAttribute="leading" id="ZBj-vG-2UR"/>
-                            <constraint firstItem="Gu4-BF-Z9d" firstAttribute="trailing" secondItem="L4G-ut-kxF" secondAttribute="trailing" id="aJ0-z9-JAC"/>
-                            <constraint firstItem="PY2-3V-7zu" firstAttribute="top" secondItem="Yts-bQ-gwH" secondAttribute="top" constant="60" id="bG1-M0-5oN"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="bottom" secondItem="L4G-ut-kxF" secondAttribute="bottom" constant="45" id="brC-Ir-E6J"/>
-                            <constraint firstItem="Yts-bQ-gwH" firstAttribute="trailing" secondItem="I7v-x4-mf9" secondAttribute="trailing" constant="311" id="lEc-kT-p5n"/>
-                            <constraint firstItem="I7v-x4-mf9" firstAttribute="top" secondItem="Yts-bQ-gwH" secondAttribute="top" constant="20" id="p1k-Db-jRf"/>
-                            <constraint firstItem="nQ1-5K-vru" firstAttribute="leading" secondItem="Yts-bQ-gwH" secondAttribute="leading" constant="31" id="uei-gG-b4m"/>
-                            <constraint firstItem="nQ1-5K-vru" firstAttribute="top" secondItem="PY2-3V-7zu" secondAttribute="bottom" constant="20" id="whV-Lu-rkX"/>
+                            <constraint firstItem="lNC-6h-g15" firstAttribute="centerY" secondItem="Yts-bQ-gwH" secondAttribute="centerY" id="5p6-Eb-R0h"/>
+                            <constraint firstItem="lNC-6h-g15" firstAttribute="centerX" secondItem="Yts-bQ-gwH" secondAttribute="centerX" id="PY6-2E-WT6"/>
+                            <constraint firstItem="lNC-6h-g15" firstAttribute="width" secondItem="XfS-1H-yGt" secondAttribute="width" constant="-30" id="XCq-Ku-iU6"/>
+                            <constraint firstItem="lNC-6h-g15" firstAttribute="height" secondItem="XfS-1H-yGt" secondAttribute="height" constant="-50" id="YFV-Dl-f0i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yts-bQ-gwH"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                                <real key="value" value="0.050000000000000003"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                                <real key="value" value="0.94999999999999996"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="dYt-UU-2i1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKJ-CG-YqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506.39999999999998" y="-541.07946026986508"/>
+            <point key="canvasLocation" x="-682.39999999999998" y="-763.26836581709154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5rP-sv-dQO">
@@ -485,9 +371,9 @@
         <image name="MyDJ" width="1280" height="720"/>
         <image name="cloud" width="974" height="750"/>
         <image name="privacy" width="1280" height="1280"/>
-        <image name="touche" width="1280" height="1241"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HUx-a6-aFo"/>
         <segue reference="HRb-x9-41V"/>
     </inferredMetricsTieBreakers>
 </document>
